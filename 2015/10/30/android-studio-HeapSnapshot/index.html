@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>AndroidStudio 1.5 内存分析工具 HeapSnapshot | pyystone - 行走代码之间的死宅烘焙师</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="AndroidStudio 1.5 内存分析工具 HeapSnapshotAndroid Studio -&amp;gt; Android Monitor -&amp;gt; Memory -&amp;gt; Dump Java Heap
+
+这个工具是我在对Handler内存泄露进行分析的时候发现的工具，一直也没有关注1.5上面的功能参考链接: http://tools.android.com/recent/androi">
+<meta property="og:type" content="article">
+<meta property="og:title" content="AndroidStudio 1.5 内存分析工具 HeapSnapshot">
+<meta property="og:url" content="http://stonepyy.cn/2015/10/30/android-studio-HeapSnapshot/index.html">
+<meta property="og:site_name" content="pyystone - 行走代码之间的死宅烘焙师">
+<meta property="og:description" content="AndroidStudio 1.5 内存分析工具 HeapSnapshotAndroid Studio -&amp;gt; Android Monitor -&amp;gt; Memory -&amp;gt; Dump Java Heap
+
+这个工具是我在对Handler内存泄露进行分析的时候发现的工具，一直也没有关注1.5上面的功能参考链接: http://tools.android.com/recent/androi">
+<meta property="og:image" content="http://7xntgf.com1.z0.glb.clouddn.com/android_studio_heapsnapshot_1.png">
+<meta property="og:updated_time" content="2015-11-01T06:02:51.340Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="AndroidStudio 1.5 内存分析工具 HeapSnapshot">
+<meta name="twitter:description" content="AndroidStudio 1.5 内存分析工具 HeapSnapshotAndroid Studio -&amp;gt; Android Monitor -&amp;gt; Memory -&amp;gt; Dump Java Heap
+
+这个工具是我在对Handler内存泄露进行分析的时候发现的工具，一直也没有关注1.5上面的功能参考链接: http://tools.android.com/recent/androi">
+  
+    <link rel="alternative" href="/atom.xml" title="pyystone - 行走代码之间的死宅烘焙师" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="/img/avatar.png" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">pyystone</a></h1>
+		</hgroup>
+
+		
+		
+		<form><input type="text" class="search" placeholder=" Search..."></form>
+				
+
+
+		
+			<div id="switch-btn" class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						<li>友情链接</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div id="switch-area" class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+							<li><a href="/categories/music">我的音乐</a></li>
+				        
+							<li><a href="/categories/photo">我的相册</a></li>
+				        
+							<li><a href="/categories/cookie">我的烘焙</a></li>
+				        
+							<li><a href="/tags">标签云</a></li>
+				        
+							<li><a href="/about">关于我</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<ul class="social">
+							
+								<li id="Email"><a class="Email" target="_blank" href="mailto:pyystone@163.com" title="Email"></a></li>
+					        
+								<li id="GitHub"><a class="GitHub" target="_blank" href="https://github.com/pyystone" title="GitHub"></a></li>
+					        
+								<li id="RSS"><a class="RSS" target="_blank" href="/atom.xml" title="RSS"></a></li>
+					        
+						</ul>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/ACG/" style="font-size: 10px;">ACG</a> <a href="/tags/android/" style="font-size: 17.5px;">android</a> <a href="/tags/android-studio/" style="font-size: 10px;">android studio</a> <a href="/tags/blog/" style="font-size: 10px;">blog</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/music/" style="font-size: 20px;">music</a> <a href="/tags/pc软件/" style="font-size: 10px;">pc软件</a> <a href="/tags/东方/" style="font-size: 10px;">东方</a> <a href="/tags/华语/" style="font-size: 12.5px;">华语</a> <a href="/tags/古风/" style="font-size: 10px;">古风</a> <a href="/tags/开发工具/" style="font-size: 10px;">开发工具</a> <a href="/tags/歌单/" style="font-size: 12.5px;">歌单</a> <a href="/tags/洛天依/" style="font-size: 10px;">洛天依</a> <a href="/tags/烘焙/" style="font-size: 10px;">烘焙</a> <a href="/tags/素材/" style="font-size: 10px;">素材</a> <a href="/tags/纯音乐/" style="font-size: 15px;">纯音乐</a> <a href="/tags/音乐/" style="font-size: 10px;">音乐</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="https://hexo.io">Hexo</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://moxfive.xyz/">MOxFIVE</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://rotonlin.cn/">roton</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://qbeenslee.com/">qbeenslee</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">一个键系脑残粉，一个Android客户端工程师，爱好：动漫，吉他，耳机，宠物，烘焙。</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">pyystone</a></h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<a href="/" class="profilepic">
+				<img lazy-src="/img/avatar.png" class="js-avatar">
+			</a>
+			<hgroup>
+			  <h1 class="header-author"><a href="/" title="回到主页">pyystone</a></h1>
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+					<li><a href="/categories/music">我的音乐</a></li>
+		        
+					<li><a href="/categories/photo">我的相册</a></li>
+		        
+					<li><a href="/categories/cookie">我的烘焙</a></li>
+		        
+					<li><a href="/tags">标签云</a></li>
+		        
+					<li><a href="/about">关于我</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+						<ul class="social">
+							
+								<li id="Email"><a class="Email" target="_blank" href="mailto:pyystone@163.com" title="Email"></a></li>
+					        
+								<li id="GitHub"><a class="GitHub" target="_blank" href="https://github.com/pyystone" title="GitHub"></a></li>
+					        
+								<li id="RSS"><a class="RSS" target="_blank" href="/atom.xml" title="RSS"></a></li>
+					        
+						</ul>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-android-studio-HeapSnapshot" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/10/30/android-studio-HeapSnapshot/" class="article-date">
+  	<time datetime="2015-10-29T17:49:10.000Z" itemprop="datePublished">2015-10-30</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      AndroidStudio 1.5 内存分析工具 HeapSnapshot
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/code/">code</a><a class="article-category-link" href="/categories/code/android/">android</a>
+	</div>
+
+
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/android/">android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/android-studio/">android studio</a></li></ul>
+	</div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="AndroidStudio_1-5_内存分析工具_HeapSnapshot">AndroidStudio 1.5 内存分析工具 HeapSnapshot</h2><p>Android Studio -&gt; Android Monitor -&gt; Memory -&gt; Dump Java Heap</p>
+<blockquote>
+<p>这个工具是我在对Handler内存泄露进行分析的时候发现的工具，一直也没有关注1.5上面的功能<br>参考链接: <a href="http://tools.android.com/recent/androidstudio15preview1available" target="_blank" rel="external">http://tools.android.com/recent/androidstudio15preview1available</a><br>属性介绍: <a href="http://www.tqcto.com/article/software/83565.html" target="_blank" rel="external">http://www.tqcto.com/article/software/83565.html</a><br>关于jvm内存管理扩展阅读: <a href="http://xstarcd.github.io/wiki/Java/JVM_Heap_Non-heap.html" target="_blank" rel="external">http://xstarcd.github.io/wiki/Java/JVM_Heap_Non-heap.html</a><br>关于java内存区域阅读: <a href="http://segmentfault.com/a/1190000002931555" target="_blank" rel="external">http://segmentfault.com/a/1190000002931555</a><br>工具研究相关代码: <a href="https://github.com/pyystone/MyAndroidStudyNotes/tree/master/app/src/main/java/pyystone/androidstudynotes/memory/handler" target="_blank" rel="external">https://github.com/pyystone/MyAndroidStudyNotes/tree/master/app/src/main/java/pyystone/androidstudynotes/memory/handler</a></p>
+</blockquote>
+<p>首先来一个工具总览</p>
+<p><img src="http://7xntgf.com1.z0.glb.clouddn.com/android_studio_heapsnapshot_1.png" alt=""></p>
+<p>好像不支持放大，可以拖到外面进行查看，我也懒得去切分了~</p>
+<p>下面属性来自上面 属性介绍里面的链接: </p>
+<h3 id="堆内存中所有的类属性_ClassName">堆内存中所有的类属性 ClassName</h3><table>
+<thead>
+<tr>
+<th>名称</th>
+<th>意义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Total Count</td>
+<td>内存中该类的对象个数</td>
+</tr>
+<tr>
+<td>Heap Count</td>
+<td>堆内存中该类的对象个数</td>
+</tr>
+<tr>
+<td>Sizeof</td>
+<td>物理大小</td>
+</tr>
+<tr>
+<td>Shallow size</td>
+<td>该对象本身占有内存大小</td>
+</tr>
+<tr>
+<td>Retained Size</td>
+<td>释放该对象后，节省的内存大小</td>
+</tr>
+</tbody>
+</table>
+<h3 id="类里面的所有对象_Instance">类里面的所有对象 Instance</h3><table>
+<thead>
+<tr>
+<th>名称</th>
+<th>意义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>depth</td>
+<td>深度</td>
+</tr>
+<tr>
+<td>Shallow Size</td>
+<td>对象本身内存大小</td>
+</tr>
+<tr>
+<td>Dominating Size</td>
+<td>管辖的内存大小</td>
+</tr>
+</tbody>
+</table>
+<h3 id="引用该类的对象_Refrence_Tree">引用该类的对象 Refrence Tree</h3><p>属性同上</p>
+<p>最后就要上我们的核心功能 Analyzer Tasks</p>
+<h3 id="Activity泄露分析_和_重复字符串分析">Activity泄露分析 和 重复字符串分析</h3><p>选中需要分析的点然后点击ProformAnalysis进行分析<br>点击下面的 Analysis Results 的结果,左边3个表会自动对应到相应的地方</p>
+
+      
+      
+    </div>
+    
+  </div>
+  
+    
+<div class="copyright">
+  <p><span>本文标题:</span><a href="/2015/10/30/android-studio-HeapSnapshot/">AndroidStudio 1.5 内存分析工具 HeapSnapshot</a></p>
+  <p><span>文章作者:</span><a href="/" title="访问 pyystone 的个人博客">pyystone</a></p>
+  <p><span>发布时间:</span>2015年10月30日 - 01时10分</p>
+  <p><span>最后更新:</span>2015年11月1日 - 14时11分</p>
+  <p>
+    <span>原始链接:</span><a href="/2015/10/30/android-studio-HeapSnapshot/" title="AndroidStudio 1.5 内存分析工具 HeapSnapshot">http://stonepyy.cn/2015/10/30/android-studio-HeapSnapshot/</a>
+    <span class="btn" data-clipboard-text="原文: http://stonepyy.cn/2015/10/30/android-studio-HeapSnapshot/　　作者: pyystone" title="点击复制文章链接">
+        <i class="fa fa-clipboard"></i>
+    </span>
+  </p>
+  <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。</p>
+  <script src="/js/clipboard.min.js"></script>
+  <script> var clipboard = new Clipboard('.btn'); </script>
+</div>
+<style type="text/css">
+  .copyright p .btn {
+    margin-left: 1em;
+  }
+  .copyright:hover p .btn::after {
+    content: "复制"
+  }
+  .copyright p .btn:hover {
+      color: gray;
+      cursor: pointer;
+    };
+</style>
+
+
+
+<nav id="article-nav">
+  
+    <div id="article-nav-newer" class="article-nav-title">
+      <a href="/2015/10/30/my-tools/">
+        我的工具
+      </a>
+    </div>
+  
+  
+    <div id="article-nav-older" class="article-nav-title">
+      <a href="/2015/10/29/music-list1/">
+        我的歌单列表 非纯音乐
+      </a>
+    </div>
+  
+</nav>
+
+  
+</article>
+
+<!-- 默认显示文章目录，在文章---前输入toc: false关闭目录 -->
+<!-- Show TOC and tocButton in default, Hide TOC via putting "toc: false" before "---" at [post].md -->
+<div id="toc" class="toc-article">
+<strong class="toc-title">文章目录</strong>
+<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#AndroidStudio_1-5_内存分析工具_HeapSnapshot"><span class="toc-number">1.</span> <span class="toc-text">AndroidStudio 1.5 内存分析工具 HeapSnapshot</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#堆内存中所有的类属性_ClassName"><span class="toc-number">1.1.</span> <span class="toc-text">堆内存中所有的类属性 ClassName</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#类里面的所有对象_Instance"><span class="toc-number">1.2.</span> <span class="toc-text">类里面的所有对象 Instance</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#引用该类的对象_Refrence_Tree"><span class="toc-number">1.3.</span> <span class="toc-text">引用该类的对象 Refrence Tree</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Activity泄露分析_和_重复字符串分析"><span class="toc-number">1.4.</span> <span class="toc-text">Activity泄露分析 和 重复字符串分析</span></a></li></ol></li></ol>
+</div>
+<style type="text/css">
+  .left-col .switch-btn {
+    display: none;
+  }
+  .left-col .switch-area {
+    display: none;
+  }
+</style>
+
+<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+<script type="text/javascript">
+  var toc_button= document.getElementById("tocButton");
+  var toc_div= document.getElementById("toc");
+  /* Show or hide toc when click on tocButton.
+  通过点击设置的按钮显示或者隐藏文章目录.*/
+  toc_button.onclick=function(){
+  if(toc_div.style.display=="none"){
+  toc_div.style.display="block";
+  toc_button.value="隐藏目录";
+  document.getElementById("switch-btn").style.display="none";
+  document.getElementById("switch-area").style.display="none";
+  }
+  else{
+  toc_div.style.display="none";
+  toc_button.value="显示目录";
+  document.getElementById("switch-btn").style.display="block";
+  document.getElementById("switch-area").style.display="block";
+  }
+  }
+</script>
+
+
+<div class="share">
+	<div class="bdsharebuttonbox">
+	<a href="#" class="bds_more" data-cmd="more"></a>
+	<a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+	<a href="#" class="bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+	<a href="#" class="bds_copy" data-cmd="copy" title="复制网址"></a>
+	<a href="#" class="bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+	<a href="#" class="bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+	</div>
+	<script>
+	window._bd_share_config={
+		"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+	</script>
+</div>
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="2015/10/30/android-studio-HeapSnapshot/" data-title="AndroidStudio 1.5 内存分析工具 HeapSnapshot" data-url="http://stonepyy.cn/2015/10/30/android-studio-HeapSnapshot/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"pyystone"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+
+
+    <style type="text/css">
+    #scroll {
+      display: none;
+    }
+    </style>
+    <div class="scroll">
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#ds-thread" title="查看评论"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+    </div>
+
+
+  
+  
+    
+    <div  class="post-nav-button">
+    <a href="/2015/10/30/my-tools/" title="上一篇: 我的工具">
+    <i class="fa fa-angle-left"></i>
+    </a>
+    <a href="/2015/10/29/music-list1/" title="下一篇: 我的歌单列表 非纯音乐">
+    <i class="fa fa-angle-right"></i>
+    </a>
+    </div>
+  
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+      <div class="footer-left">
+        &copy; 2015 pyystone
+      </div>
+        <div class="footer-right">
+          <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的静态博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减双栏 Hexo 博客主题">Yelee</a> by MOxFIVE
+        </div>
+    </div>
+    <div class="visit">
+      <span id="busuanzi_container_site_pv" style='display:none'>
+        <span id="site-visit" >本站到访数: 
+        <span id="busuanzi_value_site_uv"></span>
+        </span>
+      </span>
+      <span id="busuanzi_container_page_pv" style='display:none'>
+        <span id="page-visit">, 本页阅读量: 
+        <span id="busuanzi_value_page_pv"></span>
+        </span>
+      </span>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+  var backgroundList = ["url(/background/bg1.jpg)", "url(/background/bg2.jpg)","url(/background/bg3.jpg)","url(/background/bg4.jpg)","url(/background/bg5.jpg)","url(/background/bg6.jpg)","url(/background/bg7.jpg)","url(/background/bg8.jpg)","url(/background/bg9.jpg)","url(/background/bg10.jpg)","url(/background/bg11.jpg)","url(/background/bg12.jpg)","url(/background/bg13.jpg)","url(/background/bg14.jpg)"];
+  var background = Math.floor(Math.random() * backgroundList.length);
+  $("body").css({"background": backgroundList[background], "background-attachment": "fixed", "background-size": "cover"});
+</script>
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+<div class="scroll" id="scroll">
+<a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+<a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+</div>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  </div>
+</body>
+</html>
