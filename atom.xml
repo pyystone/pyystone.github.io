@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://stonepyy.cn/"/>
-  <updated>2015-11-01T05:56:11.760Z</updated>
+  <updated>2015-11-02T16:23:47.138Z</updated>
   <id>http://stonepyy.cn/</id>
   
   <author>
@@ -13,6 +13,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[这只是测试]]></title>
+    <link href="http://stonepyy.cn/2015/11/03/test1/"/>
+    <id>http://stonepyy.cn/2015/11/03/test1/</id>
+    <published>2015-11-02T16:22:23.000Z</published>
+    <updated>2015-11-02T16:23:47.138Z</updated>
+    <content type="html"><![CDATA[<h2 id="这只是测试">这只是测试</h2><blockquote>
+<p>测试</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// just test</span></span><br></pre></td></tr></table></figure>]]></content>
+    <summary type="html">
+    <![CDATA[<h2 id="这只是测试">这只是测试</h2><blockquote>
+<p>测试</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class=]]>
+    </summary>
+    
+      <category term="测试" scheme="http://stonepyy.cn/tags/%E6%B5%8B%E8%AF%95/"/>
+    
+      <category term="code" scheme="http://stonepyy.cn/categories/code/"/>
+    
+      <category term="test" scheme="http://stonepyy.cn/categories/code/test/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[洛天依 - 小小思念]]></title>
@@ -519,7 +544,7 @@
     <link href="http://stonepyy.cn/2015/10/26/bloginit/"/>
     <id>http://stonepyy.cn/2015/10/26/bloginit/</id>
     <published>2015-10-26T02:20:27.000Z</published>
-    <updated>2015-11-01T07:26:36.631Z</updated>
+    <updated>2015-11-02T03:34:54.668Z</updated>
     <content type="html"><![CDATA[<p>我是一个客户端开发工程师，老实说对前端开发一点也不熟，所以在搭建这个博客的时候参考了很多博客，具体就列出下面几个博客</p>
 <p>安装全系列教程：<a href="http://wsgzao.github.io/post/hexo-guide/" target="_blank" rel="external">http://wsgzao.github.io/post/hexo-guide/</a><br>主题提供者：<a href="https://github.com/MOxFIVE/hexo-theme-yelee/" target="_blank" rel="external">https://github.com/MOxFIVE/hexo-theme-yelee/</a><br>建站全攻略：<a href="http://zipperary.com/categories/hexo/" target="_blank" rel="external">http://zipperary.com/categories/hexo/</a></p>
 <h2 id="博客学习日记">博客学习日记</h2><blockquote>
@@ -528,11 +553,7 @@
 <h3 id="hexo_d_功能使用">hexo d 功能使用</h3><p>之前一直是提交public，但是这样非常麻烦，所以我这边配置了一下</p>
 <p>git保存密码参考文档：<a href="http://www.cnblogs.com/dudu/archive/2011/07/06/git_save_username_password.html" target="_blank" rel="external">http://www.cnblogs.com/dudu/archive/2011/07/06/git_save_username_password.html</a><br>这个站点要加<code>https</code>比如 <code>github</code> 是 <code>https//github.com</code></p>
 <p>然后在<code>_config.yml</code>里面添加一段代码<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  message: <span class="string">"更新博客^.^"</span></span><br><span class="line">  repo: </span><br><span class="line">  - https:<span class="comment">//github.com/pyystone/pyystone.github.io.git,master</span></span><br></pre></td></tr></table></figure></p>
-<h3 id="创建三级目录">创建三级目录</h3><p>—以上的部分<code>categories:</code> 这里<br>比如我的 <code>code/android</code> 就是<br>categories: </p>
-<ul>
-<li>code</li>
-<li>android</li>
-</ul>
+<h3 id="创建三级目录">创建三级目录</h3><p>—以上的部分<code>categories:</code> 这里<br>比如我的 <code>code/android</code> 就是<br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">categories: </span><br><span class="line"><span class="bullet">- </span>code</span><br><span class="line"><span class="bullet">- </span>android</span><br></pre></td></tr></table></figure></p>
 <h3 id="增加百度，谷歌网站索引">增加百度，谷歌网站索引</h3><blockquote>
 <p>参考地址 <a href="http://zipperary.com/2013/06/02/hexo-guide-5/" target="_blank" rel="external">http://zipperary.com/2013/06/02/hexo-guide-5/</a></p>
 </blockquote>
