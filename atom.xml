@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://stonepyy.cn/"/>
-  <updated>2015-11-01T05:56:11.760Z</updated>
+  <updated>2015-11-03T17:56:11.824Z</updated>
   <id>http://stonepyy.cn/</id>
   
   <author>
@@ -13,6 +13,41 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[这是测试]]></title>
+    <link href="http://stonepyy.cn/2015/11/04/test1/"/>
+    <id>http://stonepyy.cn/2015/11/04/test1/</id>
+    <published>2015-11-03T17:53:06.000Z</published>
+    <updated>2015-11-03T17:56:11.824Z</updated>
+    <content type="html"><![CDATA[<h1 id="这是标题">这是标题</h1><blockquote>
+<p>这是引用</p>
+</blockquote>
+<p>演示一段代码 用 <code>java</code> 语言 <em>测试</em></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br></pre></td></tr></table></figure>]]></content>
+    <summary type="html">
+    <![CDATA[<h1 id="这是标题">这是标题</h1><blockquote>
+<p>这是引用</p>
+</blockquote>
+<p>演示一段代码 用 <code>java</code> 语言 <em>测试</em></p>
+<figure class="highlight c++"]]>
+    </summary>
+    
+      <category term="android" scheme="http://stonepyy.cn/tags/android/"/>
+    
+      <category term="test" scheme="http://stonepyy.cn/tags/test/"/>
+    
+      <category term="中文" scheme="http://stonepyy.cn/tags/%E4%B8%AD%E6%96%87/"/>
+    
+      <category term="你好" scheme="http://stonepyy.cn/tags/%E4%BD%A0%E5%A5%BD/"/>
+    
+      <category term="测试" scheme="http://stonepyy.cn/tags/%E6%B5%8B%E8%AF%95/"/>
+    
+      <category term="code" scheme="http://stonepyy.cn/categories/code/"/>
+    
+      <category term="android" scheme="http://stonepyy.cn/categories/code/android/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[洛天依 - 小小思念]]></title>
