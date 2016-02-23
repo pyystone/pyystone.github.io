@@ -7,6 +7,27 @@
     </url>
 
     <url>
+        <loc>http://stonepyy.cn/2015/10/30/my-tools/</loc>
+        <lastmod>2016-02-23T07:50:05.394Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>http://stonepyy.cn/2015/12/04/android-pullzoomview/</loc>
+        <lastmod>2015-12-04T15:08:12.964Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>http://stonepyy.cn/2015/10/31/blog-list/</loc>
+        <lastmod>2015-11-04T03:05:40.232Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
         <loc>http://stonepyy.cn/2015/10/26/bloginit/</loc>
         <lastmod>2015-11-02T03:34:54.668Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -23,13 +44,6 @@
     <url>
         <loc>http://stonepyy.cn/2015/11/01/android-listview-RelativeLayout/</loc>
         <lastmod>2015-11-01T06:03:19.690Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-    </url>
-
-    <url>
-        <loc>http://stonepyy.cn/2015/10/31/blog-list/</loc>
-        <lastmod>2015-11-01T06:03:13.695Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
     </url>
@@ -65,13 +79,6 @@
     <url>
         <loc>http://stonepyy.cn/2015/11/01/muisic-gf1/</loc>
         <lastmod>2015-10-31T17:49:02.883Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-    </url>
-
-    <url>
-        <loc>http://stonepyy.cn/2015/10/30/my-tools/</loc>
-        <lastmod>2015-10-30T16:43:33.306Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
     </url>

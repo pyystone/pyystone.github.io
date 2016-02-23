@@ -21,13 +21,6 @@
     </url>
 
     <url>
-        <loc>http://stonepyy.cn/categories/code/android/</loc>
-        <lastmod>2015-11-01T06:03:19.690Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://stonepyy.cn/categories/cookie/</loc>
         <lastmod>2015-11-01T06:05:17.956Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -36,7 +29,14 @@
 
     <url>
         <loc>http://stonepyy.cn/categories/code/</loc>
-        <lastmod>2015-11-02T03:34:54.668Z</lastmod>
+        <lastmod>2015-12-04T15:08:12.964Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://stonepyy.cn/categories/code/android/</loc>
+        <lastmod>2015-12-04T15:08:12.964Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

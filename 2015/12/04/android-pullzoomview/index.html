@@ -3,21 +3,36 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Angel Beats 音乐集 | pyystone - 行走代码之间的死宅烘焙师</title>
+  <title>下拉刷新View实践 | pyystone - 行走代码之间的死宅烘焙师</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Angel Beats 音乐集
-说到音乐，身为一个死宅必须先推自己的信仰，也就是我最喜欢的动漫《Angel Beats》, 对我来说AB给我带来的影响是巨大的，他支撑我走过了大学这2年，我没有在最初遇上他，但是很荣幸在我即将进入迷茫的时候遇到了他，theme of sss 这首歌给我带来的深思无疑是非常巨大的，每次我循环这首钢琴曲的时候，心里总有种淡淡的悸动，人生不正是如此？人从懂事开始，不就已经">
+  <meta name="description" content="## 下拉刷新View实践
+&amp;gt; 这个方法参考 UltimateAndroid 项目里面的pulltozoomview的设计，因为pullToZoomView是一个下拉的ListView,而我设计的是一个LinearLayout，所以再加上自己的一些修改
+&amp;gt; 项目地址：
+
+
+### 设计原因
+    最近的项目中">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Angel Beats 音乐集">
-<meta property="og:url" content="http://stonepyy.cn/2015/10/27/angelbeats-music/index.html">
+<meta property="og:title" content="下拉刷新View实践">
+<meta property="og:url" content="http://stonepyy.cn/2015/12/04/android-pullzoomview/index.html">
 <meta property="og:site_name" content="pyystone - 行走代码之间的死宅烘焙师">
-<meta property="og:description" content="Angel Beats 音乐集
-说到音乐，身为一个死宅必须先推自己的信仰，也就是我最喜欢的动漫《Angel Beats》, 对我来说AB给我带来的影响是巨大的，他支撑我走过了大学这2年，我没有在最初遇上他，但是很荣幸在我即将进入迷茫的时候遇到了他，theme of sss 这首歌给我带来的深思无疑是非常巨大的，每次我循环这首钢琴曲的时候，心里总有种淡淡的悸动，人生不正是如此？人从懂事开始，不就已经">
-<meta property="og:updated_time" content="2015-10-27T16:30:55.060Z">
+<meta property="og:description" content="## 下拉刷新View实践
+&amp;gt; 这个方法参考 UltimateAndroid 项目里面的pulltozoomview的设计，因为pullToZoomView是一个下拉的ListView,而我设计的是一个LinearLayout，所以再加上自己的一些修改
+&amp;gt; 项目地址：
+
+
+### 设计原因
+    最近的项目中">
+<meta property="og:updated_time" content="2015-12-04T15:08:12.964Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Angel Beats 音乐集">
-<meta name="twitter:description" content="Angel Beats 音乐集
-说到音乐，身为一个死宅必须先推自己的信仰，也就是我最喜欢的动漫《Angel Beats》, 对我来说AB给我带来的影响是巨大的，他支撑我走过了大学这2年，我没有在最初遇上他，但是很荣幸在我即将进入迷茫的时候遇到了他，theme of sss 这首歌给我带来的深思无疑是非常巨大的，每次我循环这首钢琴曲的时候，心里总有种淡淡的悸动，人生不正是如此？人从懂事开始，不就已经">
+<meta name="twitter:title" content="下拉刷新View实践">
+<meta name="twitter:description" content="## 下拉刷新View实践
+&amp;gt; 这个方法参考 UltimateAndroid 项目里面的pulltozoomview的设计，因为pullToZoomView是一个下拉的ListView,而我设计的是一个LinearLayout，所以再加上自己的一些修改
+&amp;gt; 项目地址：
+
+
+### 设计原因
+    最近的项目中">
   
     <link rel="alternative" href="/atom.xml" title="pyystone - 行走代码之间的死宅烘焙师" type="application/atom+xml">
   
@@ -212,11 +227,11 @@
 		</header>				
 	</div>
 </nav>
-      <div class="body-wrap"><article id="post-angelbeats-music" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-android-pullzoomview" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2015/10/27/angelbeats-music/" class="article-date">
-  	<time datetime="2015-10-26T17:31:21.000Z" itemprop="datePublished">2015-10-27</time>
+      <a href="/2015/12/04/android-pullzoomview/" class="article-date">
+  	<time datetime="2015-12-04T12:56:53.000Z" itemprop="datePublished">2015-12-04</time>
 </a>
     </div>
   
@@ -229,7 +244,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Angel Beats 音乐集
+      下拉刷新View实践
     </h1>
   
 
@@ -238,13 +253,13 @@
       <div class="article-info article-info-post">
         
 	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/music/">music</a>
+	<a class="article-category-link" href="/categories/code/">code</a><a class="article-category-link" href="/categories/code/android/">android</a>
 	</div>
 
 
         
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ACG/">ACG</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/音乐/">音乐</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/android/">android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/下拉刷新/">下拉刷新</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/自定义view/">自定义view</a></li></ul>
 	</div>
 
         <div class="clearfix"></div>
@@ -253,26 +268,14 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="Angel_Beats_音乐集">Angel Beats 音乐集</h2><blockquote>
-<p>说到音乐，身为一个死宅必须先推自己的信仰，也就是我最喜欢的动漫《Angel Beats》, 对我来说AB给我带来的影响是巨大的，他支撑我走过了大学这2年，我没有在最初遇上他，但是很荣幸在我即将进入迷茫的时候遇到了他，theme of sss 这首歌给我带来的深思无疑是非常巨大的，每次我循环这首钢琴曲的时候，心里总有种淡淡的悸动，人生不正是如此？人从懂事开始，不就已经开发反抗这世界所有对他的不公了吗？</p>
-</blockquote>
-<h3 id="OP_&amp;_ED">OP &amp; ED</h3><blockquote>
-<p>AB的OP,ED无疑是成功的，少有的能够让我一直聆听的歌曲，每次OP的引入和结束ED的反思回忆，这就是人生</p>
-</blockquote>
-<ol>
-<li>My Soul,Your Beats!</li>
-<li>Brave Song</li>
-</ol>
-<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="450" src="http://music.163.com/outchain/player?type=1&id=2866486&auto=0&height=430"></iframe>
+        <pre><code><span class="header">## 下拉刷新View实践</span>
+<span class="blockquote">&gt; 这个方法参考 UltimateAndroid 项目里面的pulltozoomview的设计，因为pullToZoomView是一个下拉的ListView,而我设计的是一个LinearLayout，所以再加上自己的一些修改</span>
+<span class="blockquote">&gt; 项目地址：</span>
 
 
-<h3 id="AB的音乐集">AB的音乐集</h3><blockquote>
-<p>全部出自大魔王之手。</p>
-</blockquote>
-<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="450" src="http://music.163.com/outchain/player?type=1&id=45451&auto=0&height=430"></iframe>
-
-<h3 id="AB游戏钢琴曲">AB游戏钢琴曲</h3><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="450" src="http://music.163.com/outchain/player?type=1&id=3270403&auto=0&height=430"></iframe>
-
+<span class="header">### 设计原因</span>
+<span class="code">    最近的项目中</span>
+</code></pre>
       
       
     </div>
@@ -281,13 +284,13 @@
   
     
 <div class="copyright">
-  <p><span>本文标题:</span><a href="/2015/10/27/angelbeats-music/">Angel Beats 音乐集</a></p>
+  <p><span>本文标题:</span><a href="/2015/12/04/android-pullzoomview/">下拉刷新View实践</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 pyystone 的个人博客">pyystone</a></p>
-  <p><span>发布时间:</span>2015年10月27日 - 01时10分</p>
-  <p><span>最后更新:</span>2015年10月28日 - 00时10分</p>
+  <p><span>发布时间:</span>2015年12月4日 - 20时12分</p>
+  <p><span>最后更新:</span>2015年12月4日 - 23时12分</p>
   <p>
-    <span>原始链接:</span><a href="/2015/10/27/angelbeats-music/" title="Angel Beats 音乐集">http://stonepyy.cn/2015/10/27/angelbeats-music/</a>
-    <span class="btn" data-clipboard-text="原文: http://stonepyy.cn/2015/10/27/angelbeats-music/　　作者: pyystone" title="点击复制文章链接">
+    <span>原始链接:</span><a href="/2015/12/04/android-pullzoomview/" title="下拉刷新View实践">http://stonepyy.cn/2015/12/04/android-pullzoomview/</a>
+    <span class="btn" data-clipboard-text="原文: http://stonepyy.cn/2015/12/04/android-pullzoomview/　　作者: pyystone" title="点击复制文章链接">
         <i class="fa fa-clipboard"></i>
     </span>
   </p>
@@ -312,16 +315,10 @@
 
 <nav id="article-nav">
   
-    <div id="article-nav-newer" class="article-nav-title">
-      <a href="/2015/10/29/music-df1/">
-        东方妖妖梦 - Cattleya
-      </a>
-    </div>
-  
   
     <div id="article-nav-older" class="article-nav-title">
-      <a href="/2015/10/26/MyCookTools/">
-        我的烘焙清单
+      <a href="/2015/11/01/music-lty1/">
+        洛天依 - 小小思念
       </a>
     </div>
   
@@ -334,7 +331,7 @@
 <!-- Show TOC and tocButton in default, Hide TOC via putting "toc: false" before "---" at [post].md -->
 <div id="toc" class="toc-article">
 <strong class="toc-title">文章目录</strong>
-<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Angel_Beats_音乐集"><span class="toc-number">1.</span> <span class="toc-text">Angel Beats 音乐集</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#OP_&_ED"><span class="toc-number">1.1.</span> <span class="toc-text">OP & ED</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#AB的音乐集"><span class="toc-number">1.2.</span> <span class="toc-text">AB的音乐集</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#AB游戏钢琴曲"><span class="toc-number">1.3.</span> <span class="toc-text">AB游戏钢琴曲</span></a></li></ol></li></ol>
+
 </div>
 <style type="text/css">
   .left-col .switch-btn {
@@ -387,7 +384,7 @@
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="2015/10/27/angelbeats-music/" data-title="Angel Beats 音乐集" data-url="http://stonepyy.cn/2015/10/27/angelbeats-music/"></div>
+	<div class="ds-thread" data-thread-key="2015/12/04/android-pullzoomview/" data-title="下拉刷新View实践" data-url="http://stonepyy.cn/2015/12/04/android-pullzoomview/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
@@ -423,16 +420,14 @@
 
   
   
-    
     <div  class="post-nav-button">
-    <a href="/2015/10/29/music-df1/" title="上一篇: 东方妖妖梦 - Cattleya">
-    <i class="fa fa-angle-left"></i>
-    </a>
-    <a href="/2015/10/26/MyCookTools/" title="下一篇: 我的烘焙清单">
+    <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+    <a href="/2015/11/01/music-lty1/" title="下一篇: 洛天依 - 小小思念">
     <i class="fa fa-angle-right"></i>
     </a>
     </div>
   
+    
 </div>
       <footer id="footer">
   <div class="outer">
