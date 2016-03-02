@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://stonepyy.cn/"/>
-  <updated>2016-03-02T09:29:08.151Z</updated>
+  <updated>2016-03-02T09:43:36.658Z</updated>
   <id>http://stonepyy.cn/</id>
   
   <author>
@@ -13,6 +13,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[android学习日志]]></title>
+    <link href="http://stonepyy.cn/2016/03/02/androidstudynote201603/"/>
+    <id>http://stonepyy.cn/2016/03/02/androidstudynote201603/</id>
+    <published>2016-03-02T09:39:48.000Z</published>
+    <updated>2016-03-02T09:43:36.658Z</updated>
+    <content type="html"><![CDATA[<blockquote>
+<p>项目GitHub地址：<a href="https://github.com/pyystone/MyAndroidStudyNotes" target="_blank" rel="external">https://github.com/pyystone/MyAndroidStudyNotes</a></p>
+</blockquote>
+<p>这个项目其实已经写了有一段时间了，这个作为平时一些研究的范例代码和汇总，以后争取每次做一个东西都会写一个日志出来，这篇是之前一些东西的总结</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<blockquote>
+<p>项目GitHub地址：<a href="https://github.com/pyystone/MyAndroidStudyNotes" target="_blank" rel="external">https://github.com/pyyst]]>
+    </summary>
+    
+      <category term="android" scheme="http://stonepyy.cn/tags/android/"/>
+    
+      <category term="学习日志" scheme="http://stonepyy.cn/tags/%E5%AD%A6%E4%B9%A0%E6%97%A5%E5%BF%97/"/>
+    
+      <category term="懒癌发作待完成" scheme="http://stonepyy.cn/tags/%E6%87%92%E7%99%8C%E5%8F%91%E4%BD%9C%E5%BE%85%E5%AE%8C%E6%88%90/"/>
+    
+      <category term="code" scheme="http://stonepyy.cn/categories/code/"/>
+    
+      <category term="android" scheme="http://stonepyy.cn/categories/code/android/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[android 权限合集]]></title>
@@ -44,7 +72,7 @@
     <link href="http://stonepyy.cn/2015/12/04/android-pullzoomview/"/>
     <id>http://stonepyy.cn/2015/12/04/android-pullzoomview/</id>
     <published>2015-12-04T12:56:53.000Z</published>
-    <updated>2016-03-02T09:25:22.175Z</updated>
+    <updated>2016-03-02T09:43:51.300Z</updated>
     <content type="html"><![CDATA[<pre><code><span class="header">## 下拉刷新View实践</span>
 <span class="blockquote">&gt; 这个方法参考 UltimateAndroid 项目里面的pulltozoomview的设计，因为pullToZoomView是一个下拉的ListView,而我设计的是一个LinearLayout，所以再加上自己的一些修改</span>
 <span class="blockquote">&gt; 项目地址：</span>
@@ -61,6 +89,8 @@
       <category term="android" scheme="http://stonepyy.cn/tags/android/"/>
     
       <category term="下拉刷新" scheme="http://stonepyy.cn/tags/%E4%B8%8B%E6%8B%89%E5%88%B7%E6%96%B0/"/>
+    
+      <category term="懒癌发作待完成" scheme="http://stonepyy.cn/tags/%E6%87%92%E7%99%8C%E5%8F%91%E4%BD%9C%E5%BE%85%E5%AE%8C%E6%88%90/"/>
     
       <category term="自定义view" scheme="http://stonepyy.cn/tags/%E8%87%AA%E5%AE%9A%E4%B9%89view/"/>
     
