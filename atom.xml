@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://stonepyy.cn/"/>
-  <updated>2016-03-02T09:43:36.658Z</updated>
+  <updated>2016-03-07T08:02:44.698Z</updated>
   <id>http://stonepyy.cn/</id>
   
   <author>
@@ -13,6 +13,36 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Android 5.0+ pull push数据库的那些事]]></title>
+    <link href="http://stonepyy.cn/2016/03/07/android-databases/"/>
+    <id>http://stonepyy.cn/2016/03/07/android-databases/</id>
+    <published>2016-03-07T07:59:35.000Z</published>
+    <updated>2016-03-07T08:02:44.698Z</updated>
+    <content type="html"><![CDATA[<blockquote>
+<p>因为win10的更新，genymotion罢工了，只好充值了信仰，购买了6儿子，但是发现之前写的获取db脚本都失效了，一系列资料查询研究，有了以下的一些收获，Android5.0+的系统对应用的数据做了保护，不能直接访问，最直接粗暴的方法其实就是先拷贝到 sdcard下，然后pull出去，push相反，这里push是采用同样的方法，pull的话，找到了一个更好的方法，貌似也没有读取权限的限制（手里头没有没有root的手机可以试）,</p>
+</blockquote>
+<p>其实不了解 <code>exec-out</code>的功能，在官网上也没有找到比较好的解释，如果有人有相关资料提供下了解下就更好了(<em>^__^</em>) 嘻嘻……</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pull:&#10;adb exec-out run-as packname cat databases/dbfile &#62; dbfile</span><br></pre></td></tr></table></figure>
+<p>push暂时没有别的方法</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">push:&#10;@echo off&#10;echo su &#62; temp.txt&#10;echo mv sdcard/tempfile/dbfile data/data/package/databases/dbfile &#62;&#62; temp.txt&#10;echo exit &#62;&#62; temp.txt&#10;echo exit &#62;&#62; temp.txt&#10;adb shell mkdir sdcard/tempfile/&#10;adb push dbfile sdcard/tempfile/dbfile&#10;adb shell &#60; temp.txt&#10;adb shell rm sdcard/tempfile/&#10;del temp.txt</span><br></pre></td></tr></table></figure>]]></content>
+    <summary type="html">
+    <![CDATA[<blockquote>
+<p>因为win10的更新，genymotion罢工了，只好充值了信仰，购买了6儿子，但是发现之前写的获取db脚本都失效了，一系列资料查询研究，有了以下的一些收获，Android5.0+的系统对应用的数据做了保护，不能直接访问，最直接粗暴的方法其实就是先]]>
+    </summary>
+    
+      <category term="adb" scheme="http://stonepyy.cn/tags/adb/"/>
+    
+      <category term="android" scheme="http://stonepyy.cn/tags/android/"/>
+    
+      <category term="db" scheme="http://stonepyy.cn/tags/db/"/>
+    
+      <category term="code" scheme="http://stonepyy.cn/categories/code/"/>
+    
+      <category term="android" scheme="http://stonepyy.cn/categories/code/android/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[android学习日志]]></title>

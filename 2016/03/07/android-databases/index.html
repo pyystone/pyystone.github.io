@@ -3,36 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Android渠道打包 | pyystone - 行走代码之间的死宅烘焙师</title>
+  <title>Android 5.0+ pull push数据库的那些事 | pyystone - 行走代码之间的死宅烘焙师</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="采用美团渠道打包形式
-渠道包打包解决方案美团渠道包解决方案
-用于解决大量除了渠道码以外别的内容一摸一样的渠道包打包问题原地址: http://tech.meituan.com/mt-apk-packaging.html
-
-优点:
-打包速度，目前一个release的包的打包大概是 90秒，目前我开发的项目有50+个包，预计一次打渠道包需要 80分钟，采用美团方式, 2分钟
-不再需要开发参与打渠道包，">
+  <meta name="description" content="因为win10的更新，genymotion罢工了，只好充值了信仰，购买了6儿子，但是发现之前写的获取db脚本都失效了，一系列资料查询研究，有了以下的一些收获，Android5.0+的系统对应用的数据做了保护，不能直接访问，最直接粗暴的方法其实就是先拷贝到 sdcard下，然后pull出去，push相反，这里push是采用同样的方法，pull的话，找到了一个更好的方法，貌似也没有读取权限的限制（手里">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Android渠道打包">
-<meta property="og:url" content="http://stonepyy.cn/2015/10/26/android-mc/index.html">
+<meta property="og:title" content="Android 5.0+ pull push数据库的那些事">
+<meta property="og:url" content="http://stonepyy.cn/2016/03/07/android-databases/index.html">
 <meta property="og:site_name" content="pyystone - 行走代码之间的死宅烘焙师">
-<meta property="og:description" content="采用美团渠道打包形式
-渠道包打包解决方案美团渠道包解决方案
-用于解决大量除了渠道码以外别的内容一摸一样的渠道包打包问题原地址: http://tech.meituan.com/mt-apk-packaging.html
-
-优点:
-打包速度，目前一个release的包的打包大概是 90秒，目前我开发的项目有50+个包，预计一次打渠道包需要 80分钟，采用美团方式, 2分钟
-不再需要开发参与打渠道包，">
-<meta property="og:updated_time" content="2015-11-01T06:02:06.769Z">
+<meta property="og:description" content="因为win10的更新，genymotion罢工了，只好充值了信仰，购买了6儿子，但是发现之前写的获取db脚本都失效了，一系列资料查询研究，有了以下的一些收获，Android5.0+的系统对应用的数据做了保护，不能直接访问，最直接粗暴的方法其实就是先拷贝到 sdcard下，然后pull出去，push相反，这里push是采用同样的方法，pull的话，找到了一个更好的方法，貌似也没有读取权限的限制（手里">
+<meta property="og:updated_time" content="2016-03-07T08:02:44.698Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Android渠道打包">
-<meta name="twitter:description" content="采用美团渠道打包形式
-渠道包打包解决方案美团渠道包解决方案
-用于解决大量除了渠道码以外别的内容一摸一样的渠道包打包问题原地址: http://tech.meituan.com/mt-apk-packaging.html
-
-优点:
-打包速度，目前一个release的包的打包大概是 90秒，目前我开发的项目有50+个包，预计一次打渠道包需要 80分钟，采用美团方式, 2分钟
-不再需要开发参与打渠道包，">
+<meta name="twitter:title" content="Android 5.0+ pull push数据库的那些事">
+<meta name="twitter:description" content="因为win10的更新，genymotion罢工了，只好充值了信仰，购买了6儿子，但是发现之前写的获取db脚本都失效了，一系列资料查询研究，有了以下的一些收获，Android5.0+的系统对应用的数据做了保护，不能直接访问，最直接粗暴的方法其实就是先拷贝到 sdcard下，然后pull出去，push相反，这里push是采用同样的方法，pull的话，找到了一个更好的方法，貌似也没有读取权限的限制（手里">
   
     <link rel="alternative" href="/atom.xml" title="pyystone - 行走代码之间的死宅烘焙师" type="application/atom+xml">
   
@@ -227,11 +209,11 @@
 		</header>				
 	</div>
 </nav>
-      <div class="body-wrap"><article id="post-android-mc" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-android-databases" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2015/10/26/android-mc/" class="article-date">
-  	<time datetime="2015-10-26T05:11:06.000Z" itemprop="datePublished">2015-10-26</time>
+      <a href="/2016/03/07/android-databases/" class="article-date">
+  	<time datetime="2016-03-07T07:59:35.000Z" itemprop="datePublished">2016-03-07</time>
 </a>
     </div>
   
@@ -244,7 +226,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Android渠道打包
+      Android 5.0+ pull push数据库的那些事
     </h1>
   
 
@@ -259,7 +241,7 @@
 
         
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/android/">android</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/adb/">adb</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/android/">android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/db/">db</a></li></ul>
 	</div>
 
         <div class="clearfix"></div>
@@ -268,18 +250,13 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>采用美团渠道打包形式</p>
-<h2 id="渠道包打包解决方案">渠道包打包解决方案</h2><h3 id="美团渠道包解决方案">美团渠道包解决方案</h3><blockquote>
-<p>用于解决大量除了渠道码以外别的内容一摸一样的渠道包打包问题<br>原地址: <a href="http://tech.meituan.com/mt-apk-packaging.html" target="_blank" rel="external">http://tech.meituan.com/mt-apk-packaging.html</a></p>
+        <blockquote>
+<p>因为win10的更新，genymotion罢工了，只好充值了信仰，购买了6儿子，但是发现之前写的获取db脚本都失效了，一系列资料查询研究，有了以下的一些收获，Android5.0+的系统对应用的数据做了保护，不能直接访问，最直接粗暴的方法其实就是先拷贝到 sdcard下，然后pull出去，push相反，这里push是采用同样的方法，pull的话，找到了一个更好的方法，貌似也没有读取权限的限制（手里头没有没有root的手机可以试）,</p>
 </blockquote>
-<h4 id="优点:">优点:</h4><ol>
-<li>打包速度，目前一个release的包的打包大概是 90秒，目前我开发的项目有50+个包，预计一次打渠道包需要 80分钟<br>，采用美团方式, 2分钟</li>
-<li>不再需要开发参与打渠道包，以后开发只需要打连接测试环境的包和连接正式环境的包就行了</li>
-<li>打包方式利于qa进行测试验证</li>
-</ol>
-<h4 id="原理介绍:">原理介绍:</h4><p>META-INF目录<br>这个目录下面存放的是Apk包的签名，所有的文件都要通过这个签名的验证，当然有一种文件是可以越过这种验证，也就是在 META-INF目录下 一个空白没有内容只有名字的文件，那么我们只要把这个文件的名字改成我们的渠道码就可以了。<br>以后特殊设置我们照样是可以通过这个方法去累加。<br>Android中使用的代码</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">static</span> String <span class="title">getChannelFromApk</span><span class="params">(Context context, String channelKey)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//从apk包中获取</span></span><br><span class="line">        ApplicationInfo appinfo = context.getApplicationInfo();</span><br><span class="line">        String sourceDir = appinfo.sourceDir;</span><br><span class="line">        <span class="comment">//默认放在meta-inf/里， 所以需要再拼接一下</span></span><br><span class="line">        String key = <span class="string">"META-INF/"</span> + channelKey;</span><br><span class="line">        String ret = <span class="string">""</span>;</span><br><span class="line">        ZipFile zipfile = <span class="keyword">null</span>;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            zipfile = <span class="keyword">new</span> ZipFile(sourceDir);</span><br><span class="line">            Enumeration&lt;?&gt; entries = zipfile.entries();</span><br><span class="line">            <span class="keyword">while</span> (entries.hasMoreElements()) &#123;</span><br><span class="line">                ZipEntry entry = ((ZipEntry) entries.nextElement());</span><br><span class="line">                String entryName = entry.getName();</span><br><span class="line">                <span class="keyword">if</span> (entryName.startsWith(key)) &#123;</span><br><span class="line">                    ret = entryName;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">            <span class="keyword">if</span> (zipfile != <span class="keyword">null</span>) &#123;</span><br><span class="line">                <span class="keyword">try</span> &#123;</span><br><span class="line">                    zipfile.close();</span><br><span class="line">                &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">                    e.printStackTrace();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        String[] split = ret.split(<span class="string">"_"</span>);</span><br><span class="line">        String channel = <span class="string">""</span>;</span><br><span class="line">        <span class="keyword">if</span> (split != <span class="keyword">null</span> &amp;&amp; split.length &gt;= <span class="number">2</span>) &#123;</span><br><span class="line">            channel = ret.substring(split[<span class="number">0</span>].length() + <span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> channel;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-
+<p>其实不了解 <code>exec-out</code>的功能，在官网上也没有找到比较好的解释，如果有人有相关资料提供下了解下就更好了(<em>^__^</em>) 嘻嘻……</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pull:&#10;adb exec-out run-as packname cat databases/dbfile &#62; dbfile</span><br></pre></td></tr></table></figure>
+<p>push暂时没有别的方法</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">push:&#10;@echo off&#10;echo su &#62; temp.txt&#10;echo mv sdcard/tempfile/dbfile data/data/package/databases/dbfile &#62;&#62; temp.txt&#10;echo exit &#62;&#62; temp.txt&#10;echo exit &#62;&#62; temp.txt&#10;adb shell mkdir sdcard/tempfile/&#10;adb push dbfile sdcard/tempfile/dbfile&#10;adb shell &#60; temp.txt&#10;adb shell rm sdcard/tempfile/&#10;del temp.txt</span><br></pre></td></tr></table></figure>
       
       
     </div>
@@ -288,13 +265,13 @@
   
     
 <div class="copyright">
-  <p><span>本文标题:</span><a href="/2015/10/26/android-mc/">Android渠道打包</a></p>
+  <p><span>本文标题:</span><a href="/2016/03/07/android-databases/">Android 5.0+ pull push数据库的那些事</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 pyystone 的个人博客">pyystone</a></p>
-  <p><span>发布时间:</span>2015年10月26日 - 13时10分</p>
-  <p><span>最后更新:</span>2015年11月1日 - 14时11分</p>
+  <p><span>发布时间:</span>2016年3月7日 - 15时03分</p>
+  <p><span>最后更新:</span>2016年3月7日 - 16时03分</p>
   <p>
-    <span>原始链接:</span><a href="/2015/10/26/android-mc/" title="Android渠道打包">http://stonepyy.cn/2015/10/26/android-mc/</a>
-    <span class="btn" data-clipboard-text="原文: http://stonepyy.cn/2015/10/26/android-mc/　　作者: pyystone" title="点击复制文章链接">
+    <span>原始链接:</span><a href="/2016/03/07/android-databases/" title="Android 5.0+ pull push数据库的那些事">http://stonepyy.cn/2016/03/07/android-databases/</a>
+    <span class="btn" data-clipboard-text="原文: http://stonepyy.cn/2016/03/07/android-databases/　　作者: pyystone" title="点击复制文章链接">
         <i class="fa fa-clipboard"></i>
     </span>
   </p>
@@ -319,16 +296,10 @@
 
 <nav id="article-nav">
   
-    <div id="article-nav-newer" class="article-nav-title">
-      <a href="/2015/10/26/MyCookTools/">
-        我的烘焙清单
-      </a>
-    </div>
-  
   
     <div id="article-nav-older" class="article-nav-title">
-      <a href="/2015/10/26/android-handler/">
-        Handler之内存泄露
+      <a href="/2016/03/02/androidstudynote201603/">
+        android学习日志
       </a>
     </div>
   
@@ -341,7 +312,7 @@
 <!-- Show TOC and tocButton in default, Hide TOC via putting "toc: false" before "---" at [post].md -->
 <div id="toc" class="toc-article">
 <strong class="toc-title">文章目录</strong>
-<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#渠道包打包解决方案"><span class="toc-number">1.</span> <span class="toc-text">渠道包打包解决方案</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#美团渠道包解决方案"><span class="toc-number">1.1.</span> <span class="toc-text">美团渠道包解决方案</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#优点:"><span class="toc-number">1.1.1.</span> <span class="toc-text">优点:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#原理介绍:"><span class="toc-number">1.1.2.</span> <span class="toc-text">原理介绍:</span></a></li></ol></li></ol></li></ol>
+
 </div>
 <style type="text/css">
   .left-col .switch-btn {
@@ -394,7 +365,7 @@
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="2015/10/26/android-mc/" data-title="Android渠道打包" data-url="http://stonepyy.cn/2015/10/26/android-mc/"></div>
+	<div class="ds-thread" data-thread-key="2016/03/07/android-databases/" data-title="Android 5.0+ pull push数据库的那些事" data-url="http://stonepyy.cn/2016/03/07/android-databases/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
@@ -430,16 +401,14 @@
 
   
   
-    
     <div  class="post-nav-button">
-    <a href="/2015/10/26/MyCookTools/" title="上一篇: 我的烘焙清单">
-    <i class="fa fa-angle-left"></i>
-    </a>
-    <a href="/2015/10/26/android-handler/" title="下一篇: Handler之内存泄露">
+    <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+    <a href="/2016/03/02/androidstudynote201603/" title="下一篇: android学习日志">
     <i class="fa fa-angle-right"></i>
     </a>
     </div>
   
+    
 </div>
       <footer id="footer">
   <div class="outer">
