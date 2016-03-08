@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://stonepyy.cn/2016/03/08/android-gradle-oom/</loc>
+    <lastmod>2016-03-08T03:05:03.585Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://stonepyy.cn/2016/03/07/android-databases/</loc>
     <lastmod>2016-03-07T08:02:44.698Z</lastmod>
   </url>

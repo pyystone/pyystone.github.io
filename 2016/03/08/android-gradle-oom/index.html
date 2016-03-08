@@ -3,27 +3,21 @@
 <head>
   <meta charset="utf-8">
   
-  <title>今日分享2首歌 Sorrow 和 The truth that you leave | pyystone - 行走代码之间的死宅烘焙师</title>
+  <title>gradle编译之OOM | pyystone - 行走代码之间的死宅烘焙师</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="今日分享2首歌 Sorrow 和 The truth that you leaveSorrow， Fate/stay night[Realta Nua]
-
-
-The truth that you leave">
+  <meta name="description" content="这2天在使用AndroidStudio编译的时候经常报 out of memory:permgen space，gradle的内存分配不足，第一天有点2x把编译器的运行内存增加到3g，今天早上过来才发觉应该提升的是gradle的内存，留存记录为一个纪念，顺便留下2个内存的设置方式
+AndroidStudio在AndroidStudio安装目录下的bin文件夹里面修改 studio64.exe.vm">
 <meta property="og:type" content="article">
-<meta property="og:title" content="今日分享2首歌 Sorrow 和 The truth that you leave">
-<meta property="og:url" content="http://stonepyy.cn/2015/10/29/music2/index.html">
+<meta property="og:title" content="gradle编译之OOM">
+<meta property="og:url" content="http://stonepyy.cn/2016/03/08/android-gradle-oom/index.html">
 <meta property="og:site_name" content="pyystone - 行走代码之间的死宅烘焙师">
-<meta property="og:description" content="今日分享2首歌 Sorrow 和 The truth that you leaveSorrow， Fate/stay night[Realta Nua]
-
-
-The truth that you leave">
-<meta property="og:updated_time" content="2015-10-29T14:55:41.796Z">
+<meta property="og:description" content="这2天在使用AndroidStudio编译的时候经常报 out of memory:permgen space，gradle的内存分配不足，第一天有点2x把编译器的运行内存增加到3g，今天早上过来才发觉应该提升的是gradle的内存，留存记录为一个纪念，顺便留下2个内存的设置方式
+AndroidStudio在AndroidStudio安装目录下的bin文件夹里面修改 studio64.exe.vm">
+<meta property="og:updated_time" content="2016-03-08T03:05:03.585Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="今日分享2首歌 Sorrow 和 The truth that you leave">
-<meta name="twitter:description" content="今日分享2首歌 Sorrow 和 The truth that you leaveSorrow， Fate/stay night[Realta Nua]
-
-
-The truth that you leave">
+<meta name="twitter:title" content="gradle编译之OOM">
+<meta name="twitter:description" content="这2天在使用AndroidStudio编译的时候经常报 out of memory:permgen space，gradle的内存分配不足，第一天有点2x把编译器的运行内存增加到3g，今天早上过来才发觉应该提升的是gradle的内存，留存记录为一个纪念，顺便留下2个内存的设置方式
+AndroidStudio在AndroidStudio安装目录下的bin文件夹里面修改 studio64.exe.vm">
   
     <link rel="alternative" href="/atom.xml" title="pyystone - 行走代码之间的死宅烘焙师" type="application/atom+xml">
   
@@ -218,11 +212,11 @@ The truth that you leave">
 		</header>				
 	</div>
 </nav>
-      <div class="body-wrap"><article id="post-music2" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-android-gradle-oom" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2015/10/29/music2/" class="article-date">
-  	<time datetime="2015-10-29T14:45:39.000Z" itemprop="datePublished">2015-10-29</time>
+      <a href="/2016/03/08/android-gradle-oom/" class="article-date">
+  	<time datetime="2016-03-08T02:58:57.000Z" itemprop="datePublished">2016-03-08</time>
 </a>
     </div>
   
@@ -235,7 +229,7 @@ The truth that you leave">
         
   
     <h1 class="article-title" itemprop="name">
-      今日分享2首歌 Sorrow 和 The truth that you leave
+      gradle编译之OOM
     </h1>
   
 
@@ -244,13 +238,13 @@ The truth that you leave">
       <div class="article-info article-info-post">
         
 	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/music/">music</a>
+	<a class="article-category-link" href="/categories/code/">code</a><a class="article-category-link" href="/categories/code/android/">android</a>
 	</div>
 
 
         
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/music/">music</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/纯音乐/">纯音乐</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/android-studio/">android studio</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/gradle/">gradle</a></li></ul>
 	</div>
 
         <div class="clearfix"></div>
@@ -259,10 +253,10 @@ The truth that you leave">
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="今日分享2首歌_Sorrow_和_The_truth_that_you_leave">今日分享2首歌 Sorrow 和 The truth that you leave</h2><h3 id="Sorrow，_Fate/stay_night[Realta_Nua]">Sorrow， Fate/stay night[Realta Nua]</h3><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="http://music.163.com/outchain/player?type=2&id=4967067&auto=0&height=66"></iframe>
+        <p>这2天在使用AndroidStudio编译的时候经常报 <code>out of memory:permgen space</code>，gradle的内存分配不足，第一天有点2x把编译器的运行内存增加到3g，今天早上过来才发觉应该提升的是gradle的内存，留存记录为一个纪念，顺便留下2个内存的设置方式</p>
+<h3 id="AndroidStudio">AndroidStudio</h3><p>在AndroidStudio安装目录下的bin文件夹里面修改 <code>studio64.exe.vmoptions</code>,32位和64位自己选择</p>
+<h3 id="gradle">gradle</h3><p>项目目录下有一个 <code>gradle.properties</code> 文件夹，打开，在里面添加<br><code>org.gradle.jvmargs=-Xmx3072m</code>就可以了，这个内存按照自己的硬件水平自己分配</p>
 
-
-<h3 id="The_truth_that_you_leave">The truth that you leave</h3><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="http://music.163.com/outchain/player?type=2&id=139774&auto=0&height=66"></iframe>
       
       
     </div>
@@ -271,13 +265,13 @@ The truth that you leave">
   
     
 <div class="copyright">
-  <p><span>本文标题:</span><a href="/2015/10/29/music2/">今日分享2首歌 Sorrow 和 The truth that you leave</a></p>
+  <p><span>本文标题:</span><a href="/2016/03/08/android-gradle-oom/">gradle编译之OOM</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 pyystone 的个人博客">pyystone</a></p>
-  <p><span>发布时间:</span>2015年10月29日 - 22时10分</p>
-  <p><span>最后更新:</span>2015年10月29日 - 22时10分</p>
+  <p><span>发布时间:</span>2016年3月8日 - 10时03分</p>
+  <p><span>最后更新:</span>2016年3月8日 - 11时03分</p>
   <p>
-    <span>原始链接:</span><a href="/2015/10/29/music2/" title="今日分享2首歌 Sorrow 和 The truth that you leave">http://stonepyy.cn/2015/10/29/music2/</a>
-    <span class="btn" data-clipboard-text="原文: http://stonepyy.cn/2015/10/29/music2/　　作者: pyystone" title="点击复制文章链接">
+    <span>原始链接:</span><a href="/2016/03/08/android-gradle-oom/" title="gradle编译之OOM">http://stonepyy.cn/2016/03/08/android-gradle-oom/</a>
+    <span class="btn" data-clipboard-text="原文: http://stonepyy.cn/2016/03/08/android-gradle-oom/　　作者: pyystone" title="点击复制文章链接">
         <i class="fa fa-clipboard"></i>
     </span>
   </p>
@@ -302,16 +296,10 @@ The truth that you leave">
 
 <nav id="article-nav">
   
-    <div id="article-nav-newer" class="article-nav-title">
-      <a href="/2015/10/29/music-list1/">
-        我的歌单列表 非纯音乐
-      </a>
-    </div>
-  
   
     <div id="article-nav-older" class="article-nav-title">
-      <a href="/2015/10/29/music-list2/">
-        我的纯音乐列表
+      <a href="/2016/03/07/android-databases/">
+        Android 5.0+ pull push数据库的那些事
       </a>
     </div>
   
@@ -324,7 +312,7 @@ The truth that you leave">
 <!-- Show TOC and tocButton in default, Hide TOC via putting "toc: false" before "---" at [post].md -->
 <div id="toc" class="toc-article">
 <strong class="toc-title">文章目录</strong>
-<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#今日分享2首歌_Sorrow_和_The_truth_that_you_leave"><span class="toc-number">1.</span> <span class="toc-text">今日分享2首歌 Sorrow 和 The truth that you leave</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Sorrow，_Fate/stay_night[Realta_Nua]"><span class="toc-number">1.1.</span> <span class="toc-text">Sorrow， Fate/stay night[Realta Nua]</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#The_truth_that_you_leave"><span class="toc-number">1.2.</span> <span class="toc-text">The truth that you leave</span></a></li></ol></li></ol>
+<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#AndroidStudio"><span class="toc-number">1.</span> <span class="toc-text">AndroidStudio</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#gradle"><span class="toc-number">2.</span> <span class="toc-text">gradle</span></a></li></ol>
 </div>
 <style type="text/css">
   .left-col .switch-btn {
@@ -377,7 +365,7 @@ The truth that you leave">
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="2015/10/29/music2/" data-title="今日分享2首歌 Sorrow 和 The truth that you leave" data-url="http://stonepyy.cn/2015/10/29/music2/"></div>
+	<div class="ds-thread" data-thread-key="2016/03/08/android-gradle-oom/" data-title="gradle编译之OOM" data-url="http://stonepyy.cn/2016/03/08/android-gradle-oom/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
@@ -413,16 +401,14 @@ The truth that you leave">
 
   
   
-    
     <div  class="post-nav-button">
-    <a href="/2015/10/29/music-list1/" title="上一篇: 我的歌单列表 非纯音乐">
-    <i class="fa fa-angle-left"></i>
-    </a>
-    <a href="/2015/10/29/music-list2/" title="下一篇: 我的纯音乐列表">
+    <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+    <a href="/2016/03/07/android-databases/" title="下一篇: Android 5.0+ pull push数据库的那些事">
     <i class="fa fa-angle-right"></i>
     </a>
     </div>
   
+    
 </div>
       <footer id="footer">
   <div class="outer">
