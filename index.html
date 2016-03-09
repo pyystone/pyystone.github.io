@@ -237,8 +237,13 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>这2天在使用AndroidStudio编译的时候经常报 <code>out of memory:permgen space</code>，gradle的内存分配不足，第一天有点2x把编译器的运行内存增加到3g，今天早上过来才发觉应该提升的是gradle的内存，留存记录为一个纪念，顺便留下2个内存的设置方式</p>
-<h3 id="AndroidStudio">AndroidStudio</h3><p>在AndroidStudio安装目录下的bin文件夹里面修改 <code>studio64.exe.vmoptions</code>,32位和64位自己选择</p>
-<h3 id="gradle">gradle</h3><p>项目目录下有一个 <code>gradle.properties</code> 文件夹，打开，在里面添加<br><code>org.gradle.jvmargs=-Xmx3072m</code>就可以了，这个内存按照自己的硬件水平自己分配</p>
+<h3 id="AndroidStudio_配置">AndroidStudio 配置</h3><p>在AndroidStudio安装目录下的bin文件夹里面修改 <code>studio64.exe.vmoptions</code>,32位和64位自己选择</p>
+<h3 id="gradle_配置">gradle 配置</h3><p>项目目录下有一个 <code>gradle.properties</code> 文件夹，打开，在里面添加<br><code>org.gradle.jvmargs=-Xmx3072m</code>就可以了，这个内存按照自己的硬件水平自己分配</p>
+<h4 id="——–update_2016/03/09—-">——–update 2016/03/09—-</h4><p>上面的方法依然没办法解决问题，最后在<code>StackOverFlow</code>上面找到了答案</p>
+<blockquote>
+<p>连接地址 : <a href="http://stackoverflow.com/questions/17447410/outofmemoryerror-when-compiling-my-android-app-with-gradle" target="_blank" rel="external">http://stackoverflow.com/questions/17447410/outofmemoryerror-when-compiling-my-android-app-with-gradle</a></p>
+</blockquote>
+<p>在项目目录下的gradlew 里面修改<br><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">GRADLE_OPTS=<span class="string">"$GRADLE_OPTS \"-Xdock:name=$APP_NAME\" \"-Xdock:icon=$APP_HOME/media/gradle.icns\""</span></span><br><span class="line">改为：</span><br><span class="line">GRADLE_OPTS=<span class="string">"$GRADLE_OPTS \"-Xdock:name=$APP_NAME\" \"-Xdock:icon=$APP_HOME/media/gradle.icns\" \"-Xmx1024m\" \"-Xms256m\" \"-XX:MaxPermSize=1024m\""</span></span><br></pre></td></tr></table></figure></p>
 
       
       
