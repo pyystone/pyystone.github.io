@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://stonepyy.cn/"/>
-  <updated>2016-03-09T07:12:08.807Z</updated>
+  <updated>2016-03-09T07:14:57.922Z</updated>
   <id>http://stonepyy.cn/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://stonepyy.cn/2016/03/08/android-gradle-oom/"/>
     <id>http://stonepyy.cn/2016/03/08/android-gradle-oom/</id>
     <published>2016-03-08T02:58:57.000Z</published>
-    <updated>2016-03-09T07:12:08.807Z</updated>
+    <updated>2016-03-09T07:14:57.922Z</updated>
     <content type="html"><![CDATA[<p>这2天在使用AndroidStudio编译的时候经常报 <code>out of memory:permgen space</code>，gradle的内存分配不足，第一天有点2x把编译器的运行内存增加到3g，今天早上过来才发觉应该提升的是gradle的内存，留存记录为一个纪念，顺便留下2个内存的设置方式</p>
 <h3 id="AndroidStudio_配置">AndroidStudio 配置</h3><p>在AndroidStudio安装目录下的bin文件夹里面修改 <code>studio64.exe.vmoptions</code>,32位和64位自己选择</p>
 <h3 id="gradle_配置">gradle 配置</h3><p>项目目录下有一个 <code>gradle.properties</code> 文件夹，打开，在里面添加<br><code>org.gradle.jvmargs=-Xmx3072m</code>就可以了，这个内存按照自己的硬件水平自己分配</p>
