@@ -2,6 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://stonepyy.cn/2016/04/15/kotlin1/</loc>
+    <lastmod>2016-04-15T03:56:24.824Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://stonepyy.cn/about/index.html</loc>
+    <lastmod>2016-04-14T08:10:44.690Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://stonepyy.cn/2016/03/08/android-gradle-oom/</loc>
     <lastmod>2016-03-09T07:14:57.922Z</lastmod>
   </url>
@@ -119,11 +129,6 @@
   <url>
     <loc>http://stonepyy.cn/categories/index.html</loc>
     <lastmod>2015-10-27T16:29:24.769Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://stonepyy.cn/about/index.html</loc>
-    <lastmod>2015-10-26T18:12:02.320Z</lastmod>
   </url>
   
   <url>

@@ -126,7 +126,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/ACG/" style="font-size: 10px;">ACG</a> <a href="/tags/adb/" style="font-size: 10px;">adb</a> <a href="/tags/android/" style="font-size: 20px;">android</a> <a href="/tags/android-studio/" style="font-size: 12.5px;">android studio</a> <a href="/tags/blog/" style="font-size: 10px;">blog</a> <a href="/tags/db/" style="font-size: 10px;">db</a> <a href="/tags/gradle/" style="font-size: 10px;">gradle</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/music/" style="font-size: 17.5px;">music</a> <a href="/tags/pc软件/" style="font-size: 10px;">pc软件</a> <a href="/tags/permission/" style="font-size: 10px;">permission</a> <a href="/tags/下拉刷新/" style="font-size: 10px;">下拉刷新</a> <a href="/tags/东方/" style="font-size: 10px;">东方</a> <a href="/tags/华语/" style="font-size: 12.5px;">华语</a> <a href="/tags/古风/" style="font-size: 10px;">古风</a> <a href="/tags/学习日志/" style="font-size: 10px;">学习日志</a> <a href="/tags/开发工具/" style="font-size: 10px;">开发工具</a> <a href="/tags/懒癌发作待完成/" style="font-size: 12.5px;">懒癌发作待完成</a> <a href="/tags/歌单/" style="font-size: 12.5px;">歌单</a> <a href="/tags/洛天依/" style="font-size: 10px;">洛天依</a> <a href="/tags/烘焙/" style="font-size: 10px;">烘焙</a> <a href="/tags/素材/" style="font-size: 10px;">素材</a> <a href="/tags/纯音乐/" style="font-size: 15px;">纯音乐</a> <a href="/tags/网站/" style="font-size: 10px;">网站</a> <a href="/tags/自定义view/" style="font-size: 10px;">自定义view</a> <a href="/tags/音乐/" style="font-size: 10px;">音乐</a>
+						<a href="/tags/ACG/" style="font-size: 10px;">ACG</a> <a href="/tags/adb/" style="font-size: 10px;">adb</a> <a href="/tags/android/" style="font-size: 20px;">android</a> <a href="/tags/android-studio/" style="font-size: 12.5px;">android studio</a> <a href="/tags/blog/" style="font-size: 10px;">blog</a> <a href="/tags/db/" style="font-size: 10px;">db</a> <a href="/tags/gradle/" style="font-size: 10px;">gradle</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/java/" style="font-size: 10px;">java</a> <a href="/tags/kotlin/" style="font-size: 10px;">kotlin</a> <a href="/tags/music/" style="font-size: 17.5px;">music</a> <a href="/tags/pc软件/" style="font-size: 10px;">pc软件</a> <a href="/tags/permission/" style="font-size: 10px;">permission</a> <a href="/tags/下拉刷新/" style="font-size: 10px;">下拉刷新</a> <a href="/tags/东方/" style="font-size: 10px;">东方</a> <a href="/tags/华语/" style="font-size: 12.5px;">华语</a> <a href="/tags/古风/" style="font-size: 10px;">古风</a> <a href="/tags/学习日志/" style="font-size: 10px;">学习日志</a> <a href="/tags/开发工具/" style="font-size: 10px;">开发工具</a> <a href="/tags/懒癌发作待完成/" style="font-size: 12.5px;">懒癌发作待完成</a> <a href="/tags/歌单/" style="font-size: 12.5px;">歌单</a> <a href="/tags/洛天依/" style="font-size: 10px;">洛天依</a> <a href="/tags/烘焙/" style="font-size: 10px;">烘焙</a> <a href="/tags/素材/" style="font-size: 10px;">素材</a> <a href="/tags/纯音乐/" style="font-size: 15px;">纯音乐</a> <a href="/tags/网站/" style="font-size: 10px;">网站</a> <a href="/tags/自定义view/" style="font-size: 10px;">自定义view</a> <a href="/tags/音乐/" style="font-size: 10px;">音乐</a>
 					</div>
 				</section>
 				
@@ -209,6 +209,77 @@
 	</div>
 </nav>
       <div class="body-wrap">
+  
+    <article id="post-kotlin1" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/04/15/kotlin1/" class="article-date">
+  	<time datetime="2016-04-15T03:54:51.000Z" itemprop="datePublished">2016-04-15</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/04/15/kotlin1/">kotlin简单研究1</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>其实这个是比较早了，写得也比较匆忙，zz</p>
+<h3 id="控制流">控制流</h3><h4 id="if,for,while">if,for,while</h4><p>在kotlin中 <code>for</code> 和 <code>while</code> 的变化不大，if 语句的变化就是每个代码块的最后一行可以作为这个if语句的返回值<br><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (a &gt; b) a <span class="keyword">else</span> b</span><br><span class="line">或</span><br><span class="line"><span class="keyword">if</span> (a &gt; b) &#123;</span><br><span class="line">    a</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    b</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h4 id="switch_-&gt;_when">switch -&gt; when</h4><p>kotlin中when是switch的升级版，因为when支持各种条件语句<br><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="variable"><span class="keyword">var</span> number</span>:<span class="typename">Int</span> = <span class="number">0</span></span><br><span class="line"><span class="variable"><span class="keyword">var</span> bool</span>:<span class="typename">Int</span> = <span class="number">0</span></span><br><span class="line"><span class="variable"><span class="keyword">var</span> char</span>:<span class="typename">Int</span> = <span class="number">0</span></span><br><span class="line"><span class="variable"><span class="keyword">var</span> other</span>:<span class="typename">Int</span> = <span class="number">0</span></span><br><span class="line"><span class="variable"><span class="keyword">var</span> array</span> = ArrayList<span class="type">&lt;Any&gt;</span>()</span><br><span class="line">array.add(<span class="number">1</span>)</span><br><span class="line">array.add(<span class="number">2</span>)</span><br><span class="line">array.add('a')</span><br><span class="line">array.add(<span class="string">"a"</span>)</span><br><span class="line">array.add(<span class="literal">false</span>)</span><br><span class="line">array.add(<span class="number">1.5</span>)</span><br><span class="line">array.add(ArrayList<span class="type">&lt;Any&gt;</span>())</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (i <span class="keyword">in</span> array.iterator()) &#123;</span><br><span class="line">    <span class="keyword">when</span>(i) &#123;</span><br><span class="line">        <span class="keyword">is</span> Number -&gt; number ++</span><br><span class="line">        <span class="literal">true</span> -&gt; bool ++</span><br><span class="line">        <span class="literal">false</span> -&gt; bool ++</span><br><span class="line">        <span class="keyword">is</span> <span class="typename">Char</span>,<span class="keyword">is</span> String -&gt; char ++</span><br><span class="line">        <span class="keyword">else</span> -&gt; other ++</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="标签,返回,中断,继续">标签,返回,中断,继续</h3><p><code>return</code>,<code>break</code>,<code>continue</code></p>
+<p>标签的作用就是用来标记表达式，上面的3个操作符可以通过标签，直接操作这个标签的表达式<br><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 联动：http://my.oschina.net/yuanhonglong/blog/469546</span></span><br><span class="line"><span class="function"><span class="keyword">fun</span> <span class="title">LabelDemo</span><span class="params">()</span> &#123;</span></span><br><span class="line">        hello@ <span class="keyword">for</span> (i <span class="keyword">in</span> <span class="number">1.</span><span class="number">.9</span>) &#123;</span><br><span class="line">            <span class="keyword">for</span> (j <span class="keyword">in</span> <span class="number">1.</span><span class="number">.9</span>) &#123;</span><br><span class="line">                <span class="keyword">if</span> (i <span class="type">&lt; j) &#123;</span><br><span class="line">                    println()</span><br><span class="line">                    continue@hello  //break</span><br><span class="line">                &#125;</span><br><span class="line">                print("[$i,$j] ")</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        println()</span><br><span class="line">        </span><br><span class="line">        var array = ArrayList&lt;Any&gt;</span>()</span><br><span class="line">        array.add(intArrayOf(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>))</span><br><span class="line">        array.add(intArrayOf(<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>))</span><br><span class="line">        array.add(intArrayOf(<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>))</span><br><span class="line"></span><br><span class="line">        <span class="variable"><span class="keyword">var</span> f</span> = run(&#123;</span><br><span class="line">            findNumber@ &#123;</span><br><span class="line">                number:<span class="typename">Int</span> -&gt;</span><br><span class="line">                findNumber2@ array.forEach &#123;</span><br><span class="line">                    findNumber3@ (it <span class="keyword">as</span> IntArray).forEach &#123;</span><br><span class="line">                        <span class="keyword">if</span> (it.equals(number)) &#123;</span><br><span class="line">                            <span class="keyword">return</span>@findNumber <span class="string">"find"</span></span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">return</span>@findNumber <span class="string">"not find"</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;)</span><br><span class="line"></span><br><span class="line">        println(<span class="string">"$&#123;f(0)&#125;"</span>)</span><br><span class="line">        println(<span class="string">"$&#123;f(1)&#125;"</span>)</span><br><span class="line"></span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
+<p>this表达式<br><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// demo 2</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Label2Class</span> </span>&#123;</span><br><span class="line">    init &#123;</span><br><span class="line">        <span class="variable"><span class="keyword">var</span> inner</span>:innerClass = innerClass()</span><br><span class="line">    &#125;</span><br><span class="line">    inner <span class="class"><span class="keyword">class</span> <span class="title">innerClass</span> </span>&#123; <span class="comment">// implicit label @B</span></span><br><span class="line">        init &#123;</span><br><span class="line">            <span class="variable"><span class="keyword">var</span> a</span>:<span class="typename">Int</span> = <span class="number">0</span>;</span><br><span class="line">            a.foo()</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="function"><span class="keyword">fun</span> Int.<span class="title">foo</span><span class="params">()</span> &#123; <span class="comment">// implicit label @foo</span></span></span><br><span class="line">            <span class="variable"><span class="keyword">val</span> a</span> = this@Label2Class <span class="comment">// A's this</span></span><br><span class="line">            <span class="variable"><span class="keyword">val</span> b</span> = this@innerClass <span class="comment">// B's this</span></span><br><span class="line"></span><br><span class="line">            <span class="variable"><span class="keyword">val</span> c</span> = this <span class="comment">// foo()'s receiver, an Int</span></span><br><span class="line">            <span class="variable"><span class="keyword">val</span> c1</span> = this@foo <span class="comment">// foo()'s receiver, an Int</span></span><br><span class="line">            run &#123;</span><br><span class="line">                println(<span class="string">"a is $&#123;a.out()&#125;"</span>)</span><br><span class="line">                println(<span class="string">"b id $&#123;b.out()&#125;"</span>)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="function"><span class="keyword">fun</span> <span class="title">out</span><span class="params">()</span>:String &#123;</span></span><br><span class="line">            <span class="keyword">return</span> <span class="string">"innerClass"</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">fun</span> <span class="title">out</span><span class="params">()</span> :String &#123;</span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">"Label2Class"</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h4 id="静态变量_和_静态方法_与_伴生对象">静态变量 和 静态方法 与 伴生对象</h4><p>在kotlin 里面，不支持类里面有外面能够直接访问的 静态变量 和 方法，但是放到 伴生对象里面就可以让外面访问<br><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">song</span> </span>&#123;</span><br><span class="line">    <span class="keyword">companion</span> <span class="keyword">object</span> &#123;</span><br><span class="line">        <span class="comment">//...</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h4 id="安全性检查">安全性检查</h4><p>? 允许变量为空<br>!! 变量如果为空会抛除异常<br>不带上面2个符号默认为!!</p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">NotNullClass</span> </span>&#123;</span><br><span class="line">    <span class="variable"><span class="keyword">var</span> numberA</span>:<span class="typename">Int</span>? = <span class="literal">null</span></span><br><span class="line">    <span class="variable"><span class="keyword">var</span> numberB</span>:String = <span class="string">"123"</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">fun</span> <span class="title">getNumberA</span><span class="params">()</span> : Int &#123;</span></span><br><span class="line">        numberA = <span class="number">1</span></span><br><span class="line">        <span class="keyword">return</span> numberA!!</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>demo2<br><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TreeClass</span></span>(length:<span class="typename">Int</span>) &#123;</span><br><span class="line">    <span class="variable"><span class="keyword">var</span> node</span>:TreeClass? = <span class="literal">null</span></span><br><span class="line">    init &#123;</span><br><span class="line">        <span class="keyword">if</span> (length &gt; <span class="number">0</span>) &#123;</span><br><span class="line">            node = TreeClass(length -<span class="number">1</span>)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">companion</span> <span class="keyword">object</span> &#123;</span><br><span class="line">        <span class="function"><span class="keyword">fun</span> <span class="title">showTreeLength</span><span class="params">(treeClass: <span class="typename">TreeClass</span>)</span> &#123;</span></span><br><span class="line">            <span class="variable"><span class="keyword">var</span> length</span> = -<span class="number">1</span></span><br><span class="line">            <span class="variable"><span class="keyword">var</span> nextTree</span>:TreeClass? = treeClass</span><br><span class="line">            <span class="keyword">do</span> &#123;</span><br><span class="line">                length ++</span><br><span class="line">                nextTree = nextTree?.node</span><br><span class="line">            &#125; <span class="keyword">while</span>(nextTree != <span class="literal">null</span>)</span><br><span class="line">            println(<span class="string">"TreeClass treeLength $length"</span>)</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
+      
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/code/">code</a><a class="article-category-link" href="/categories/code/kotlin/">kotlin</a>
+	</div>
+
+
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/kotlin/">kotlin</a></li></ul>
+	</div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
   
     <article id="post-android-gradle-oom" class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -788,80 +859,6 @@
       
 	<div class="article-tag tagcloud">
 		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/android/">android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/blog/">blog</a></li></ul>
-	</div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-makegif" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2015/10/30/makegif/" class="article-date">
-  	<time datetime="2015-10-30T15:32:06.000Z" itemprop="datePublished">2015-10-30</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/10/30/makegif/">简易视频片段转gif制作</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="简易视频片段转gif制作">简易视频片段转gif制作</h2><blockquote>
-<p>好久没有更新博客了，这个算是给回归立一个flag吧？<br>今天晚上感觉夏洛特 友利 动筷子好萌，想做个动图，发现上一次做动图已经是1年前的事情了，都已经忘记了怎么做了<br>大略下载使用了 格式工厂，暴风影音，迅雷看看，QGifer，等都不能很好满足我的需求，因为要么是因为画质被降质了，要么就是帧数太高（qq限制了10帧/秒），所以果断是用回来神器 UleadGIFAnimator，以及视频分割软件 UltraVideoSplitterPortable。</p>
-</blockquote>
-<p>视频分割软件就不谈了，这里主要是讲 UleadGIFAnimator</p>
-<ol>
-<li>用UltraVideoSplitter 分割出需要的片段，片段的扩展名最好是avi</li>
-<li>UleadGIFAnimator 打开视频</li>
-<li>使用选择工具选择需要制作成gif的部分</li>
-<li>菜单栏 - 编辑 - 修正画布</li>
-<li>因为帧数问题所以要对应删除部分帧</li>
-<li>导出为gif</li>
-</ol>
-<p><img src="http://7xntgf.com1.z0.glb.clouddn.com/yl_gif.gif" alt=""></p>
-
-      
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/res/">res</a>
-	</div>
-
-
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/素材/">素材</a></li></ul>
 	</div>
 
       

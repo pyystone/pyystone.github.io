@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>kotlin简单研究1 | pyystone - 行走代码之间的死宅烘焙师</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="其实这个是比较早了，写得也比较匆忙，zz
+控制流if,for,while在kotlin中 for 和 while 的变化不大，if 语句的变化就是每个代码块的最后一行可以作为这个if语句的返回值1234567if (a &amp;gt; b) a else b或if (a &amp;gt; b) &amp;#123;    a&amp;#125; else &amp;#123;    b&amp;#125;
+switch -&amp;gt; whenk">
+<meta property="og:type" content="article">
+<meta property="og:title" content="kotlin简单研究1">
+<meta property="og:url" content="http://stonepyy.cn/2016/04/15/kotlin1/index.html">
+<meta property="og:site_name" content="pyystone - 行走代码之间的死宅烘焙师">
+<meta property="og:description" content="其实这个是比较早了，写得也比较匆忙，zz
+控制流if,for,while在kotlin中 for 和 while 的变化不大，if 语句的变化就是每个代码块的最后一行可以作为这个if语句的返回值1234567if (a &amp;gt; b) a else b或if (a &amp;gt; b) &amp;#123;    a&amp;#125; else &amp;#123;    b&amp;#125;
+switch -&amp;gt; whenk">
+<meta property="og:updated_time" content="2016-04-15T03:56:24.824Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="kotlin简单研究1">
+<meta name="twitter:description" content="其实这个是比较早了，写得也比较匆忙，zz
+控制流if,for,while在kotlin中 for 和 while 的变化不大，if 语句的变化就是每个代码块的最后一行可以作为这个if语句的返回值1234567if (a &amp;gt; b) a else b或if (a &amp;gt; b) &amp;#123;    a&amp;#125; else &amp;#123;    b&amp;#125;
+switch -&amp;gt; whenk">
+  
+    <link rel="alternative" href="/atom.xml" title="pyystone - 行走代码之间的死宅烘焙师" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="/img/avatar.png" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">pyystone</a></h1>
+		</hgroup>
+
+		
+		
+		<form><input type="text" class="search" placeholder=" Search..."></form>
+				
+
+
+		
+			<div id="switch-btn" class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						<li>友情链接</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div id="switch-area" class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+							<li><a href="/categories/music">我的音乐</a></li>
+				        
+							<li><a href="/categories/photo">我的相册</a></li>
+				        
+							<li><a href="/categories/cookie">我的烘焙</a></li>
+				        
+							<li><a href="/tags">标签云</a></li>
+				        
+							<li><a href="/about">关于我</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<ul class="social">
+							
+								<li id="Email"><a class="Email" target="_blank" href="mailto:pyystone@163.com" title="Email"></a></li>
+					        
+								<li id="GitHub"><a class="GitHub" target="_blank" href="https://github.com/pyystone" title="GitHub"></a></li>
+					        
+								<li id="RSS"><a class="RSS" target="_blank" href="/atom.xml" title="RSS"></a></li>
+					        
+						</ul>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/ACG/" style="font-size: 10px;">ACG</a> <a href="/tags/adb/" style="font-size: 10px;">adb</a> <a href="/tags/android/" style="font-size: 20px;">android</a> <a href="/tags/android-studio/" style="font-size: 12.5px;">android studio</a> <a href="/tags/blog/" style="font-size: 10px;">blog</a> <a href="/tags/db/" style="font-size: 10px;">db</a> <a href="/tags/gradle/" style="font-size: 10px;">gradle</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/java/" style="font-size: 10px;">java</a> <a href="/tags/kotlin/" style="font-size: 10px;">kotlin</a> <a href="/tags/music/" style="font-size: 17.5px;">music</a> <a href="/tags/pc软件/" style="font-size: 10px;">pc软件</a> <a href="/tags/permission/" style="font-size: 10px;">permission</a> <a href="/tags/下拉刷新/" style="font-size: 10px;">下拉刷新</a> <a href="/tags/东方/" style="font-size: 10px;">东方</a> <a href="/tags/华语/" style="font-size: 12.5px;">华语</a> <a href="/tags/古风/" style="font-size: 10px;">古风</a> <a href="/tags/学习日志/" style="font-size: 10px;">学习日志</a> <a href="/tags/开发工具/" style="font-size: 10px;">开发工具</a> <a href="/tags/懒癌发作待完成/" style="font-size: 12.5px;">懒癌发作待完成</a> <a href="/tags/歌单/" style="font-size: 12.5px;">歌单</a> <a href="/tags/洛天依/" style="font-size: 10px;">洛天依</a> <a href="/tags/烘焙/" style="font-size: 10px;">烘焙</a> <a href="/tags/素材/" style="font-size: 10px;">素材</a> <a href="/tags/纯音乐/" style="font-size: 15px;">纯音乐</a> <a href="/tags/网站/" style="font-size: 10px;">网站</a> <a href="/tags/自定义view/" style="font-size: 10px;">自定义view</a> <a href="/tags/音乐/" style="font-size: 10px;">音乐</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="https://hexo.io">Hexo</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://moxfive.xyz/">MOxFIVE</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://rotonlin.cn/">roton</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://qbeenslee.com/">qbeenslee</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">一个键系脑残粉，一个Android客户端工程师，爱好：动漫，吉他，耳机，宠物，烘焙。</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">pyystone</a></h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<a href="/" class="profilepic">
+				<img lazy-src="/img/avatar.png" class="js-avatar">
+			</a>
+			<hgroup>
+			  <h1 class="header-author"><a href="/" title="回到主页">pyystone</a></h1>
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+					<li><a href="/categories/music">我的音乐</a></li>
+		        
+					<li><a href="/categories/photo">我的相册</a></li>
+		        
+					<li><a href="/categories/cookie">我的烘焙</a></li>
+		        
+					<li><a href="/tags">标签云</a></li>
+		        
+					<li><a href="/about">关于我</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+						<ul class="social">
+							
+								<li id="Email"><a class="Email" target="_blank" href="mailto:pyystone@163.com" title="Email"></a></li>
+					        
+								<li id="GitHub"><a class="GitHub" target="_blank" href="https://github.com/pyystone" title="GitHub"></a></li>
+					        
+								<li id="RSS"><a class="RSS" target="_blank" href="/atom.xml" title="RSS"></a></li>
+					        
+						</ul>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-kotlin1" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/04/15/kotlin1/" class="article-date">
+  	<time datetime="2016-04-15T03:54:51.000Z" itemprop="datePublished">2016-04-15</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      kotlin简单研究1
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/code/">code</a><a class="article-category-link" href="/categories/code/kotlin/">kotlin</a>
+	</div>
+
+
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/kotlin/">kotlin</a></li></ul>
+	</div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>其实这个是比较早了，写得也比较匆忙，zz</p>
+<h3 id="控制流">控制流</h3><h4 id="if,for,while">if,for,while</h4><p>在kotlin中 <code>for</code> 和 <code>while</code> 的变化不大，if 语句的变化就是每个代码块的最后一行可以作为这个if语句的返回值<br><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (a &gt; b) a <span class="keyword">else</span> b</span><br><span class="line">或</span><br><span class="line"><span class="keyword">if</span> (a &gt; b) &#123;</span><br><span class="line">    a</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    b</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h4 id="switch_-&gt;_when">switch -&gt; when</h4><p>kotlin中when是switch的升级版，因为when支持各种条件语句<br><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="variable"><span class="keyword">var</span> number</span>:<span class="typename">Int</span> = <span class="number">0</span></span><br><span class="line"><span class="variable"><span class="keyword">var</span> bool</span>:<span class="typename">Int</span> = <span class="number">0</span></span><br><span class="line"><span class="variable"><span class="keyword">var</span> char</span>:<span class="typename">Int</span> = <span class="number">0</span></span><br><span class="line"><span class="variable"><span class="keyword">var</span> other</span>:<span class="typename">Int</span> = <span class="number">0</span></span><br><span class="line"><span class="variable"><span class="keyword">var</span> array</span> = ArrayList<span class="type">&lt;Any&gt;</span>()</span><br><span class="line">array.add(<span class="number">1</span>)</span><br><span class="line">array.add(<span class="number">2</span>)</span><br><span class="line">array.add('a')</span><br><span class="line">array.add(<span class="string">"a"</span>)</span><br><span class="line">array.add(<span class="literal">false</span>)</span><br><span class="line">array.add(<span class="number">1.5</span>)</span><br><span class="line">array.add(ArrayList<span class="type">&lt;Any&gt;</span>())</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (i <span class="keyword">in</span> array.iterator()) &#123;</span><br><span class="line">    <span class="keyword">when</span>(i) &#123;</span><br><span class="line">        <span class="keyword">is</span> Number -&gt; number ++</span><br><span class="line">        <span class="literal">true</span> -&gt; bool ++</span><br><span class="line">        <span class="literal">false</span> -&gt; bool ++</span><br><span class="line">        <span class="keyword">is</span> <span class="typename">Char</span>,<span class="keyword">is</span> String -&gt; char ++</span><br><span class="line">        <span class="keyword">else</span> -&gt; other ++</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="标签,返回,中断,继续">标签,返回,中断,继续</h3><p><code>return</code>,<code>break</code>,<code>continue</code></p>
+<p>标签的作用就是用来标记表达式，上面的3个操作符可以通过标签，直接操作这个标签的表达式<br><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 联动：http://my.oschina.net/yuanhonglong/blog/469546</span></span><br><span class="line"><span class="function"><span class="keyword">fun</span> <span class="title">LabelDemo</span><span class="params">()</span> &#123;</span></span><br><span class="line">        hello@ <span class="keyword">for</span> (i <span class="keyword">in</span> <span class="number">1.</span><span class="number">.9</span>) &#123;</span><br><span class="line">            <span class="keyword">for</span> (j <span class="keyword">in</span> <span class="number">1.</span><span class="number">.9</span>) &#123;</span><br><span class="line">                <span class="keyword">if</span> (i <span class="type">&lt; j) &#123;</span><br><span class="line">                    println()</span><br><span class="line">                    continue@hello  //break</span><br><span class="line">                &#125;</span><br><span class="line">                print("[$i,$j] ")</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        println()</span><br><span class="line">        </span><br><span class="line">        var array = ArrayList&lt;Any&gt;</span>()</span><br><span class="line">        array.add(intArrayOf(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>))</span><br><span class="line">        array.add(intArrayOf(<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>))</span><br><span class="line">        array.add(intArrayOf(<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>))</span><br><span class="line"></span><br><span class="line">        <span class="variable"><span class="keyword">var</span> f</span> = run(&#123;</span><br><span class="line">            findNumber@ &#123;</span><br><span class="line">                number:<span class="typename">Int</span> -&gt;</span><br><span class="line">                findNumber2@ array.forEach &#123;</span><br><span class="line">                    findNumber3@ (it <span class="keyword">as</span> IntArray).forEach &#123;</span><br><span class="line">                        <span class="keyword">if</span> (it.equals(number)) &#123;</span><br><span class="line">                            <span class="keyword">return</span>@findNumber <span class="string">"find"</span></span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">return</span>@findNumber <span class="string">"not find"</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;)</span><br><span class="line"></span><br><span class="line">        println(<span class="string">"$&#123;f(0)&#125;"</span>)</span><br><span class="line">        println(<span class="string">"$&#123;f(1)&#125;"</span>)</span><br><span class="line"></span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
+<p>this表达式<br><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// demo 2</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Label2Class</span> </span>&#123;</span><br><span class="line">    init &#123;</span><br><span class="line">        <span class="variable"><span class="keyword">var</span> inner</span>:innerClass = innerClass()</span><br><span class="line">    &#125;</span><br><span class="line">    inner <span class="class"><span class="keyword">class</span> <span class="title">innerClass</span> </span>&#123; <span class="comment">// implicit label @B</span></span><br><span class="line">        init &#123;</span><br><span class="line">            <span class="variable"><span class="keyword">var</span> a</span>:<span class="typename">Int</span> = <span class="number">0</span>;</span><br><span class="line">            a.foo()</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="function"><span class="keyword">fun</span> Int.<span class="title">foo</span><span class="params">()</span> &#123; <span class="comment">// implicit label @foo</span></span></span><br><span class="line">            <span class="variable"><span class="keyword">val</span> a</span> = this@Label2Class <span class="comment">// A's this</span></span><br><span class="line">            <span class="variable"><span class="keyword">val</span> b</span> = this@innerClass <span class="comment">// B's this</span></span><br><span class="line"></span><br><span class="line">            <span class="variable"><span class="keyword">val</span> c</span> = this <span class="comment">// foo()'s receiver, an Int</span></span><br><span class="line">            <span class="variable"><span class="keyword">val</span> c1</span> = this@foo <span class="comment">// foo()'s receiver, an Int</span></span><br><span class="line">            run &#123;</span><br><span class="line">                println(<span class="string">"a is $&#123;a.out()&#125;"</span>)</span><br><span class="line">                println(<span class="string">"b id $&#123;b.out()&#125;"</span>)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="function"><span class="keyword">fun</span> <span class="title">out</span><span class="params">()</span>:String &#123;</span></span><br><span class="line">            <span class="keyword">return</span> <span class="string">"innerClass"</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">fun</span> <span class="title">out</span><span class="params">()</span> :String &#123;</span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">"Label2Class"</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h4 id="静态变量_和_静态方法_与_伴生对象">静态变量 和 静态方法 与 伴生对象</h4><p>在kotlin 里面，不支持类里面有外面能够直接访问的 静态变量 和 方法，但是放到 伴生对象里面就可以让外面访问<br><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">song</span> </span>&#123;</span><br><span class="line">    <span class="keyword">companion</span> <span class="keyword">object</span> &#123;</span><br><span class="line">        <span class="comment">//...</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h4 id="安全性检查">安全性检查</h4><p>? 允许变量为空<br>!! 变量如果为空会抛除异常<br>不带上面2个符号默认为!!</p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">NotNullClass</span> </span>&#123;</span><br><span class="line">    <span class="variable"><span class="keyword">var</span> numberA</span>:<span class="typename">Int</span>? = <span class="literal">null</span></span><br><span class="line">    <span class="variable"><span class="keyword">var</span> numberB</span>:String = <span class="string">"123"</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">fun</span> <span class="title">getNumberA</span><span class="params">()</span> : Int &#123;</span></span><br><span class="line">        numberA = <span class="number">1</span></span><br><span class="line">        <span class="keyword">return</span> numberA!!</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>demo2<br><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TreeClass</span></span>(length:<span class="typename">Int</span>) &#123;</span><br><span class="line">    <span class="variable"><span class="keyword">var</span> node</span>:TreeClass? = <span class="literal">null</span></span><br><span class="line">    init &#123;</span><br><span class="line">        <span class="keyword">if</span> (length &gt; <span class="number">0</span>) &#123;</span><br><span class="line">            node = TreeClass(length -<span class="number">1</span>)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">companion</span> <span class="keyword">object</span> &#123;</span><br><span class="line">        <span class="function"><span class="keyword">fun</span> <span class="title">showTreeLength</span><span class="params">(treeClass: <span class="typename">TreeClass</span>)</span> &#123;</span></span><br><span class="line">            <span class="variable"><span class="keyword">var</span> length</span> = -<span class="number">1</span></span><br><span class="line">            <span class="variable"><span class="keyword">var</span> nextTree</span>:TreeClass? = treeClass</span><br><span class="line">            <span class="keyword">do</span> &#123;</span><br><span class="line">                length ++</span><br><span class="line">                nextTree = nextTree?.node</span><br><span class="line">            &#125; <span class="keyword">while</span>(nextTree != <span class="literal">null</span>)</span><br><span class="line">            println(<span class="string">"TreeClass treeLength $length"</span>)</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
+      
+      
+    </div>
+    
+  </div>
+  
+    
+<div class="copyright">
+  <p><span>本文标题:</span><a href="/2016/04/15/kotlin1/">kotlin简单研究1</a></p>
+  <p><span>文章作者:</span><a href="/" title="访问 pyystone 的个人博客">pyystone</a></p>
+  <p><span>发布时间:</span>2016年4月15日 - 11时04分</p>
+  <p><span>最后更新:</span>2016年4月15日 - 11时04分</p>
+  <p>
+    <span>原始链接:</span><a href="/2016/04/15/kotlin1/" title="kotlin简单研究1">http://stonepyy.cn/2016/04/15/kotlin1/</a>
+    <span class="btn" data-clipboard-text="原文: http://stonepyy.cn/2016/04/15/kotlin1/　　作者: pyystone" title="点击复制文章链接">
+        <i class="fa fa-clipboard"></i>
+    </span>
+  </p>
+  <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。</p>
+  <script src="/js/clipboard.min.js"></script>
+  <script> var clipboard = new Clipboard('.btn'); </script>
+</div>
+<style type="text/css">
+  .copyright p .btn {
+    margin-left: 1em;
+  }
+  .copyright:hover p .btn::after {
+    content: "复制"
+  }
+  .copyright p .btn:hover {
+      color: gray;
+      cursor: pointer;
+    };
+</style>
+
+
+
+<nav id="article-nav">
+  
+  
+    <div id="article-nav-older" class="article-nav-title">
+      <a href="/2016/03/08/android-gradle-oom/">
+        gradle编译之OOM
+      </a>
+    </div>
+  
+</nav>
+
+  
+</article>
+
+<!-- 默认显示文章目录，在文章---前输入toc: false关闭目录 -->
+<!-- Show TOC and tocButton in default, Hide TOC via putting "toc: false" before "---" at [post].md -->
+<div id="toc" class="toc-article">
+<strong class="toc-title">文章目录</strong>
+<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#控制流"><span class="toc-number">1.</span> <span class="toc-text">控制流</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#if,for,while"><span class="toc-number">1.1.</span> <span class="toc-text">if,for,while</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#switch_->_when"><span class="toc-number">1.2.</span> <span class="toc-text">switch -> when</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#标签,返回,中断,继续"><span class="toc-number">2.</span> <span class="toc-text">标签,返回,中断,继续</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#静态变量_和_静态方法_与_伴生对象"><span class="toc-number">2.1.</span> <span class="toc-text">静态变量 和 静态方法 与 伴生对象</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#安全性检查"><span class="toc-number">2.2.</span> <span class="toc-text">安全性检查</span></a></li></ol></li></ol>
+</div>
+<style type="text/css">
+  .left-col .switch-btn {
+    display: none;
+  }
+  .left-col .switch-area {
+    display: none;
+  }
+</style>
+
+<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+<script type="text/javascript">
+  var toc_button= document.getElementById("tocButton");
+  var toc_div= document.getElementById("toc");
+  /* Show or hide toc when click on tocButton.
+  通过点击设置的按钮显示或者隐藏文章目录.*/
+  toc_button.onclick=function(){
+  if(toc_div.style.display=="none"){
+  toc_div.style.display="block";
+  toc_button.value="隐藏目录";
+  document.getElementById("switch-btn").style.display="none";
+  document.getElementById("switch-area").style.display="none";
+  }
+  else{
+  toc_div.style.display="none";
+  toc_button.value="显示目录";
+  document.getElementById("switch-btn").style.display="block";
+  document.getElementById("switch-area").style.display="block";
+  }
+  }
+</script>
+
+
+<div class="share">
+	<div class="bdsharebuttonbox">
+	<a href="#" class="bds_more" data-cmd="more"></a>
+	<a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+	<a href="#" class="bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+	<a href="#" class="bds_copy" data-cmd="copy" title="复制网址"></a>
+	<a href="#" class="bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+	<a href="#" class="bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+	</div>
+	<script>
+	window._bd_share_config={
+		"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+	</script>
+</div>
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="2016/04/15/kotlin1/" data-title="kotlin简单研究1" data-url="http://stonepyy.cn/2016/04/15/kotlin1/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"pyystone"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+
+
+    <style type="text/css">
+    #scroll {
+      display: none;
+    }
+    </style>
+    <div class="scroll">
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#ds-thread" title="查看评论"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+    </div>
+
+
+  
+  
+    <div  class="post-nav-button">
+    <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+    <a href="/2016/03/08/android-gradle-oom/" title="下一篇: gradle编译之OOM">
+    <i class="fa fa-angle-right"></i>
+    </a>
+    </div>
+  
+    
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+      <div class="footer-left">
+        &copy; 2016 pyystone
+      </div>
+        <div class="footer-right">
+          <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的静态博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减双栏 Hexo 博客主题">Yelee</a> by MOxFIVE
+        </div>
+    </div>
+    <div class="visit">
+      <span id="busuanzi_container_site_pv" style='display:none'>
+        <span id="site-visit" >本站到访数: 
+        <span id="busuanzi_value_site_uv"></span>
+        </span>
+      </span>
+      <span id="busuanzi_container_page_pv" style='display:none'>
+        <span id="page-visit">, 本页阅读量: 
+        <span id="busuanzi_value_page_pv"></span>
+        </span>
+      </span>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+  var backgroundList = ["url(/background/bg1.jpg)", "url(/background/bg2.jpg)","url(/background/bg3.jpg)","url(/background/bg4.jpg)","url(/background/bg5.jpg)","url(/background/bg6.jpg)","url(/background/bg7.jpg)","url(/background/bg8.jpg)","url(/background/bg9.jpg)","url(/background/bg10.jpg)","url(/background/bg11.jpg)","url(/background/bg12.jpg)","url(/background/bg13.jpg)","url(/background/bg14.jpg)"];
+  var background = Math.floor(Math.random() * backgroundList.length);
+  $("body").css({"background": backgroundList[background], "background-attachment": "fixed", "background-size": "cover"});
+</script>
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+<div class="scroll" id="scroll">
+<a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+<a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+</div>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  </div>
+</body>
+</html>
