@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://stonepyy.cn/"/>
-  <updated>2016-04-15T03:56:24.824Z</updated>
+  <updated>2016-07-31T10:50:35.000Z</updated>
   <id>http://stonepyy.cn/</id>
   
   <author>
@@ -15,11 +15,33 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title><![CDATA[阿里云域名交由dnspod 解析]]></title>
+    <link href="http://stonepyy.cn/2016/07/31/changedns/"/>
+    <id>http://stonepyy.cn/2016/07/31/changedns/</id>
+    <published>2016-07-31T10:23:56.000Z</published>
+    <updated>2016-07-31T10:50:35.000Z</updated>
+    <content type="html"><![CDATA[<blockquote>
+<p>今天给1w打了个电话，把自己的宽带登录改为路由器登录，所以路由器拿到了公网ip，有了公网ip肯定就需要映射给自己的域名，因为路由器是网件R7000，刷了梅林固件，内部ddns还是比较强大的，但是不支持阿里云，在koolshare论坛找到了替代方法，这里做个笔记</p>
+</blockquote>
+<h3 id="dnspod解析阿里云域名">dnspod解析阿里云域名</h3><p>阿里云域名解析dns改为dnspod的域名</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<blockquote>
+<p>今天给1w打了个电话，把自己的宽带登录改为路由器登录，所以路由器拿到了公网ip，有了公网ip肯定就需要映射给自己的域名，因为路由器是网件R7000，刷了梅林固件，内部ddns还是比较强大的，但是不支持阿里云，在koolshare论坛找到了替代方法，]]>
+    </summary>
+    
+      <category term="ddns" scheme="http://stonepyy.cn/tags/ddns/"/>
+    
+      <category term="ddns" scheme="http://stonepyy.cn/categories/ddns/"/>
+    
+  </entry>
+  
+  <entry>
     <title><![CDATA[kotlin简单研究1]]></title>
     <link href="http://stonepyy.cn/2016/04/15/kotlin1/"/>
     <id>http://stonepyy.cn/2016/04/15/kotlin1/</id>
     <published>2016-04-15T03:54:51.000Z</published>
-    <updated>2016-04-15T03:56:24.824Z</updated>
+    <updated>2016-04-15T03:56:24.000Z</updated>
     <content type="html"><![CDATA[<p>其实这个是比较早了，写得也比较匆忙，zz</p>
 <h3 id="控制流">控制流</h3><h4 id="if,for,while">if,for,while</h4><p>在kotlin中 <code>for</code> 和 <code>while</code> 的变化不大，if 语句的变化就是每个代码块的最后一行可以作为这个if语句的返回值<br><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (a &gt; b) a <span class="keyword">else</span> b</span><br><span class="line">或</span><br><span class="line"><span class="keyword">if</span> (a &gt; b) &#123;</span><br><span class="line">    a</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    b</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <h4 id="switch_-&gt;_when">switch -&gt; when</h4><p>kotlin中when是switch的升级版，因为when支持各种条件语句<br><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="variable"><span class="keyword">var</span> number</span>:<span class="typename">Int</span> = <span class="number">0</span></span><br><span class="line"><span class="variable"><span class="keyword">var</span> bool</span>:<span class="typename">Int</span> = <span class="number">0</span></span><br><span class="line"><span class="variable"><span class="keyword">var</span> char</span>:<span class="typename">Int</span> = <span class="number">0</span></span><br><span class="line"><span class="variable"><span class="keyword">var</span> other</span>:<span class="typename">Int</span> = <span class="number">0</span></span><br><span class="line"><span class="variable"><span class="keyword">var</span> array</span> = ArrayList<span class="type">&lt;Any&gt;</span>()</span><br><span class="line">array.add(<span class="number">1</span>)</span><br><span class="line">array.add(<span class="number">2</span>)</span><br><span class="line">array.add('a')</span><br><span class="line">array.add(<span class="string">"a"</span>)</span><br><span class="line">array.add(<span class="literal">false</span>)</span><br><span class="line">array.add(<span class="number">1.5</span>)</span><br><span class="line">array.add(ArrayList<span class="type">&lt;Any&gt;</span>())</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (i <span class="keyword">in</span> array.iterator()) &#123;</span><br><span class="line">    <span class="keyword">when</span>(i) &#123;</span><br><span class="line">        <span class="keyword">is</span> Number -&gt; number ++</span><br><span class="line">        <span class="literal">true</span> -&gt; bool ++</span><br><span class="line">        <span class="literal">false</span> -&gt; bool ++</span><br><span class="line">        <span class="keyword">is</span> <span class="typename">Char</span>,<span class="keyword">is</span> String -&gt; char ++</span><br><span class="line">        <span class="keyword">else</span> -&gt; other ++</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
@@ -51,7 +73,7 @@
     <link href="http://stonepyy.cn/2016/03/08/android-gradle-oom/"/>
     <id>http://stonepyy.cn/2016/03/08/android-gradle-oom/</id>
     <published>2016-03-08T02:58:57.000Z</published>
-    <updated>2016-03-09T07:14:57.922Z</updated>
+    <updated>2016-03-09T07:14:57.000Z</updated>
     <content type="html"><![CDATA[<p>这2天在使用AndroidStudio编译的时候经常报 <code>out of memory:permgen space</code>，gradle的内存分配不足，第一天有点2x把编译器的运行内存增加到3g，今天早上过来才发觉应该提升的是gradle的内存，留存记录为一个纪念，顺便留下2个内存的设置方式</p>
 <h3 id="AndroidStudio_配置">AndroidStudio 配置</h3><p>在AndroidStudio安装目录下的bin文件夹里面修改 <code>studio64.exe.vmoptions</code>,32位和64位自己选择</p>
 <h3 id="gradle_配置">gradle 配置</h3><p>项目目录下有一个 <code>gradle.properties</code> 文件夹，打开，在里面添加<br><code>org.gradle.jvmargs=-Xmx3072m</code>就可以了，这个内存按照自己的硬件水平自己分配</p>
@@ -80,7 +102,7 @@
     <link href="http://stonepyy.cn/2016/03/07/android-databases/"/>
     <id>http://stonepyy.cn/2016/03/07/android-databases/</id>
     <published>2016-03-07T07:59:35.000Z</published>
-    <updated>2016-03-07T08:02:44.698Z</updated>
+    <updated>2016-03-07T08:02:44.000Z</updated>
     <content type="html"><![CDATA[<blockquote>
 <p>因为win10的更新，genymotion罢工了，只好充值了信仰，购买了6儿子，但是发现之前写的获取db脚本都失效了，一系列资料查询研究，有了以下的一些收获，Android5.0+的系统对应用的数据做了保护，不能直接访问，最直接粗暴的方法其实就是先拷贝到 sdcard下，然后pull出去，push相反，这里push是采用同样的方法，pull的话，找到了一个更好的方法，貌似也没有读取权限的限制（手里头没有没有root的手机可以试）,</p>
 </blockquote>
@@ -110,7 +132,7 @@
     <link href="http://stonepyy.cn/2016/03/02/androidstudynote201603/"/>
     <id>http://stonepyy.cn/2016/03/02/androidstudynote201603/</id>
     <published>2016-03-02T09:39:48.000Z</published>
-    <updated>2016-03-02T09:43:36.658Z</updated>
+    <updated>2016-03-02T09:43:36.000Z</updated>
     <content type="html"><![CDATA[<blockquote>
 <p>项目GitHub地址：<a href="https://github.com/pyystone/MyAndroidStudyNotes" target="_blank" rel="external">https://github.com/pyystone/MyAndroidStudyNotes</a></p>
 </blockquote>
@@ -138,7 +160,7 @@
     <link href="http://stonepyy.cn/2016/03/02/android-permission/"/>
     <id>http://stonepyy.cn/2016/03/02/android-permission/</id>
     <published>2016-03-02T07:39:25.000Z</published>
-    <updated>2016-03-02T09:29:08.151Z</updated>
+    <updated>2016-03-02T09:29:08.000Z</updated>
     <content type="html"><![CDATA[<blockquote>
 <p>出处： <a href="http://merrygrass.iteye.com/blog/1121284" target="_blank" rel="external">http://merrygrass.iteye.com/blog/1121284</a></p>
 </blockquote>
@@ -163,7 +185,7 @@
     <link href="http://stonepyy.cn/2015/12/04/android-pullzoomview/"/>
     <id>http://stonepyy.cn/2015/12/04/android-pullzoomview/</id>
     <published>2015-12-04T12:56:53.000Z</published>
-    <updated>2016-03-02T09:43:51.300Z</updated>
+    <updated>2016-03-02T09:43:51.000Z</updated>
     <content type="html"><![CDATA[<pre><code><span class="header">## 下拉刷新View实践</span>
 <span class="blockquote">&gt; 这个方法参考 UltimateAndroid 项目里面的pulltozoomview的设计，因为pullToZoomView是一个下拉的ListView,而我设计的是一个LinearLayout，所以再加上自己的一些修改</span>
 <span class="blockquote">&gt; 项目地址：</span>
@@ -196,7 +218,7 @@
     <link href="http://stonepyy.cn/2015/11/01/music-lty1/"/>
     <id>http://stonepyy.cn/2015/11/01/music-lty1/</id>
     <published>2015-11-01T05:52:02.000Z</published>
-    <updated>2015-11-01T05:56:11.760Z</updated>
+    <updated>2015-11-01T05:56:11.000Z</updated>
     <content type="html"><![CDATA[<h2 id="洛天依_-_小小思念">洛天依 - 小小思念</h2><p>洛天依里面我非常喜欢的一首歌，舒缓，感情表达直接</p>
 <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="http://music.163.com/outchain/player?type=2&id=28987160&auto=0&height=66"></iframe>
 
@@ -223,7 +245,7 @@
     <link href="http://stonepyy.cn/2015/11/01/android-listview-RelativeLayout/"/>
     <id>http://stonepyy.cn/2015/11/01/android-listview-RelativeLayout/</id>
     <published>2015-10-31T18:00:55.000Z</published>
-    <updated>2015-11-01T06:03:19.690Z</updated>
+    <updated>2015-11-01T06:03:19.000Z</updated>
     <content type="html"><![CDATA[<h2 id="Android_ListView_Item_使用_relativelayout_高度计算问题">Android ListView Item 使用 relativelayout 高度计算问题</h2><blockquote>
 <p>今天同事反馈一个异常的问题，我们在使用relativelayout 作为listview的item的时候，如果relativelayout里面嵌套了别的 layout，而且高度都是用match_parent的话，那么这些layout的高度计算都会有问题</p>
 </blockquote>
@@ -248,7 +270,7 @@
     <link href="http://stonepyy.cn/2015/11/01/muisic-gf1/"/>
     <id>http://stonepyy.cn/2015/11/01/muisic-gf1/</id>
     <published>2015-10-31T17:46:31.000Z</published>
-    <updated>2015-10-31T17:49:02.883Z</updated>
+    <updated>2015-10-31T17:49:02.000Z</updated>
     <content type="html"><![CDATA[<p>无论是旁白配音，歌词 还是 旋律，都弄得我一身鸡皮疙瘩</p>
 <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="http://music.163.com/outchain/player?type=2&id=29031001&auto=0&height=66"></iframe>
 ]]></content>
@@ -272,7 +294,7 @@
     <link href="http://stonepyy.cn/2015/10/31/blog-list/"/>
     <id>http://stonepyy.cn/2015/10/31/blog-list/</id>
     <published>2015-10-31T10:10:18.000Z</published>
-    <updated>2015-11-04T03:05:40.232Z</updated>
+    <updated>2015-11-04T03:05:40.000Z</updated>
     <content type="html"><![CDATA[<h2 id="我每周必逛的几个博客">我每周必逛的几个博客</h2><p><a href="http://www.trinea.cn/" target="_blank" rel="external">Trinea 快的移动端架构师</a><br>很多优秀的源码剖析和性能分析</p>
 <p><a href="http://androidweekly.cn/" target="_blank" rel="external">Android开发技术周报</a>: 周更，每周都有一些优秀的博文和开源控件，行业新闻等分享</p>
 <p><a href="http://android-developers.blogspot.jp/" target="_blank" rel="external">Android开发者博客</a><br>你懂得，老实说我逛得少，英文不咋地</p>
@@ -299,7 +321,7 @@
     <link href="http://stonepyy.cn/2015/10/30/makegif/"/>
     <id>http://stonepyy.cn/2015/10/30/makegif/</id>
     <published>2015-10-30T15:32:06.000Z</published>
-    <updated>2015-10-30T16:43:12.744Z</updated>
+    <updated>2015-10-30T16:43:12.000Z</updated>
     <content type="html"><![CDATA[<h2 id="简易视频片段转gif制作">简易视频片段转gif制作</h2><blockquote>
 <p>好久没有更新博客了，这个算是给回归立一个flag吧？<br>今天晚上感觉夏洛特 友利 动筷子好萌，想做个动图，发现上一次做动图已经是1年前的事情了，都已经忘记了怎么做了<br>大略下载使用了 格式工厂，暴风影音，迅雷看看，QGifer，等都不能很好满足我的需求，因为要么是因为画质被降质了，要么就是帧数太高（qq限制了10帧/秒），所以果断是用回来神器 UleadGIFAnimator，以及视频分割软件 UltraVideoSplitterPortable。</p>
 </blockquote>
@@ -330,7 +352,7 @@
     <link href="http://stonepyy.cn/2015/10/30/my-tools/"/>
     <id>http://stonepyy.cn/2015/10/30/my-tools/</id>
     <published>2015-10-30T14:50:36.000Z</published>
-    <updated>2016-02-23T07:50:05.394Z</updated>
+    <updated>2016-02-23T07:50:05.000Z</updated>
     <content type="html"><![CDATA[<h2 id="这里用来介绍我自己的一些工具（最近更新时间：2016年2月23日15:49:28）">这里用来介绍我自己的一些工具（最近更新时间：2016年2月23日15:49:28）</h2><h3 id="开发工具">开发工具</h3><h4 id="Android_开发:">Android 开发:</h4><p><a href="http://developer.android.com/tools/studio/index.html" target="_blank" rel="external">Android Studio</a> Android APP 开发第一神器，不需要任何理由</p>
 <h4 id="Android_模拟器">Android 模拟器</h4><p><a href="https://www.genymotion.com/" target="_blank" rel="external">Genymotion</a><br>非常好用，尤其是Android 6.0，顺滑程度非常出色，针对开发者来说，免费版就已经足够了，不过如果需要开发app的话，需要安装插件<br>Genymotion-ARM-Translation ，这个随便搜索就行了，拖进虚拟机里面就可以安装，然后要求重启</p>
 <h4 id="VMware_Workstation">VMware Workstation</h4><p>这个用来创建虚拟机效果还是不错的，尤其是虚拟机创建无桌面的linux系统，然后SCRT XSHELL 等进行远程登录访问</p>
@@ -375,7 +397,7 @@
     <link href="http://stonepyy.cn/2015/10/30/android-studio-HeapSnapshot/"/>
     <id>http://stonepyy.cn/2015/10/30/android-studio-HeapSnapshot/</id>
     <published>2015-10-29T17:49:10.000Z</published>
-    <updated>2015-11-01T06:02:51.340Z</updated>
+    <updated>2015-11-01T06:02:51.000Z</updated>
     <content type="html"><![CDATA[<h2 id="AndroidStudio_1-5_内存分析工具_HeapSnapshot">AndroidStudio 1.5 内存分析工具 HeapSnapshot</h2><p>Android Studio -&gt; Android Monitor -&gt; Memory -&gt; Dump Java Heap</p>
 <blockquote>
 <p>这个工具是我在对Handler内存泄露进行分析的时候发现的工具，一直也没有关注1.5上面的功能<br>参考链接: <a href="http://tools.android.com/recent/androidstudio15preview1available" target="_blank" rel="external">http://tools.android.com/recent/androidstudio15preview1available</a><br>属性介绍: <a href="http://www.tqcto.com/article/software/83565.html" target="_blank" rel="external">http://www.tqcto.com/article/software/83565.html</a><br>关于jvm内存管理扩展阅读: <a href="http://xstarcd.github.io/wiki/Java/JVM_Heap_Non-heap.html" target="_blank" rel="external">http://xstarcd.github.io/wiki/Java/JVM_Heap_Non-heap.html</a><br>关于java内存区域阅读: <a href="http://segmentfault.com/a/1190000002931555" target="_blank" rel="external">http://segmentfault.com/a/1190000002931555</a><br>工具研究相关代码: <a href="https://github.com/pyystone/MyAndroidStudyNotes/tree/master/app/src/main/java/pyystone/androidstudynotes/memory/handler" target="_blank" rel="external">https://github.com/pyystone/MyAndroidStudyNotes/tree/master/app/src/main/java/pyystone/androidstudynotes/memory/handler</a></p>
@@ -459,7 +481,7 @@
     <link href="http://stonepyy.cn/2015/10/29/music-list1/"/>
     <id>http://stonepyy.cn/2015/10/29/music-list1/</id>
     <published>2015-10-29T14:50:26.000Z</published>
-    <updated>2015-10-29T14:55:52.863Z</updated>
+    <updated>2015-10-29T14:55:52.000Z</updated>
     <content type="html"><![CDATA[<h2 id="我的歌单列表_非纯音乐">我的歌单列表 非纯音乐</h2><blockquote>
 <p>因为是歌单，所以会不停更新哟~</p>
 </blockquote>
@@ -486,7 +508,7 @@
     <link href="http://stonepyy.cn/2015/10/29/music2/"/>
     <id>http://stonepyy.cn/2015/10/29/music2/</id>
     <published>2015-10-29T14:45:39.000Z</published>
-    <updated>2015-10-29T14:55:41.796Z</updated>
+    <updated>2015-10-29T14:55:41.000Z</updated>
     <content type="html"><![CDATA[<h2 id="今日分享2首歌_Sorrow_和_The_truth_that_you_leave">今日分享2首歌 Sorrow 和 The truth that you leave</h2><h3 id="Sorrow，_Fate/stay_night[Realta_Nua]">Sorrow， Fate/stay night[Realta Nua]</h3><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="http://music.163.com/outchain/player?type=2&id=4967067&auto=0&height=66"></iframe>
 
 
@@ -508,7 +530,7 @@
     <link href="http://stonepyy.cn/2015/10/29/music-list2/"/>
     <id>http://stonepyy.cn/2015/10/29/music-list2/</id>
     <published>2015-10-29T14:42:59.000Z</published>
-    <updated>2015-10-29T14:55:48.055Z</updated>
+    <updated>2015-10-29T14:55:48.000Z</updated>
     <content type="html"><![CDATA[<h2 id="我的纯音乐列表">我的纯音乐列表</h2><blockquote>
 <p>因为是歌单，所以会不停更新哟~</p>
 </blockquote>
@@ -535,7 +557,7 @@
     <link href="http://stonepyy.cn/2015/10/29/music-df1/"/>
     <id>http://stonepyy.cn/2015/10/29/music-df1/</id>
     <published>2015-10-28T16:17:45.000Z</published>
-    <updated>2015-10-28T17:01:00.024Z</updated>
+    <updated>2015-10-28T17:01:00.000Z</updated>
     <content type="html"><![CDATA[<h1 id="东方妖妖梦_-_Cattleya">东方妖妖梦 - Cattleya</h1><p>戴上耳机，细心聆听，被音乐美哭了。</p>
 <p>千言万语还不如大家细心聆听，以后有空也总结一些好听的古风歌曲，真心很赞，以后可能考虑搜集各种无损音乐进行分享</p>
 <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="http://music.163.com/outchain/player?type=2&id=730753&auto=0&height=66"></iframe>]]></content>
@@ -560,7 +582,7 @@
     <link href="http://stonepyy.cn/2015/10/27/angelbeats-music/"/>
     <id>http://stonepyy.cn/2015/10/27/angelbeats-music/</id>
     <published>2015-10-26T17:31:21.000Z</published>
-    <updated>2015-10-27T16:30:55.060Z</updated>
+    <updated>2015-10-27T16:30:55.000Z</updated>
     <content type="html"><![CDATA[<h2 id="Angel_Beats_音乐集">Angel Beats 音乐集</h2><blockquote>
 <p>说到音乐，身为一个死宅必须先推自己的信仰，也就是我最喜欢的动漫《Angel Beats》, 对我来说AB给我带来的影响是巨大的，他支撑我走过了大学这2年，我没有在最初遇上他，但是很荣幸在我即将进入迷茫的时候遇到了他，theme of sss 这首歌给我带来的深思无疑是非常巨大的，每次我循环这首钢琴曲的时候，心里总有种淡淡的悸动，人生不正是如此？人从懂事开始，不就已经开发反抗这世界所有对他的不公了吗？</p>
 </blockquote>
@@ -599,7 +621,7 @@
     <link href="http://stonepyy.cn/2015/10/26/MyCookTools/"/>
     <id>http://stonepyy.cn/2015/10/26/MyCookTools/</id>
     <published>2015-10-26T12:07:41.000Z</published>
-    <updated>2015-11-01T06:05:17.956Z</updated>
+    <updated>2015-11-01T06:05:17.000Z</updated>
     <content type="html"><![CDATA[<h3 id="烤箱">烤箱</h3><p>德尔玛 EO320（不限，功能讲，上下控温，30L+，做面包最好自带发酵功能）</p>
 <h3 id="工具">工具</h3><p>搅拌刮刀<br>打蛋盆（可以用比较深底的大容量碗替代，做蛋糕的时候鸡蛋打发体积会变得很大）<br>打蛋器 （单纯做蛋糕便宜一点的就可以了，如果想要做面包，需要和面的话，只能用厨师机 或者 面包机）<br>面粉筛<br>模具（推荐硅胶，PS:做戚风面包不适合用不沾模具）<br>锡纸（垫底和控制蛋糕？面包的火候）<br>硅胶垫（做烤鸡等烧烤类的东西，主要用户托盘的垫底材料，多次利用）<br>油纸 （单次利用，用于面包，海绵蛋糕）<br>托盘（一般烤箱有送，不过烤箱送的只能托盘只能烤面包或者已经有模具装好的蛋糕，要做 海绵蛋糕那种大的方形的蛋糕，就需要自己去买方形托盘了）</p>
 <h3 id="蛋糕_饼干_原料">蛋糕 饼干 原料</h3><p>黄油<br>低筋粉<br>泡打粉，吉士粉（不是必备）</p>
@@ -615,38 +637,6 @@
       <category term="烘焙" scheme="http://stonepyy.cn/tags/%E7%83%98%E7%84%99/"/>
     
       <category term="cookie" scheme="http://stonepyy.cn/categories/cookie/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Android渠道打包]]></title>
-    <link href="http://stonepyy.cn/2015/10/26/android-mc/"/>
-    <id>http://stonepyy.cn/2015/10/26/android-mc/</id>
-    <published>2015-10-26T05:11:06.000Z</published>
-    <updated>2015-11-01T06:02:06.769Z</updated>
-    <content type="html"><![CDATA[<p>采用美团渠道打包形式</p>
-<h2 id="渠道包打包解决方案">渠道包打包解决方案</h2><h3 id="美团渠道包解决方案">美团渠道包解决方案</h3><blockquote>
-<p>用于解决大量除了渠道码以外别的内容一摸一样的渠道包打包问题<br>原地址: <a href="http://tech.meituan.com/mt-apk-packaging.html" target="_blank" rel="external">http://tech.meituan.com/mt-apk-packaging.html</a></p>
-</blockquote>
-<h4 id="优点:">优点:</h4><ol>
-<li>打包速度，目前一个release的包的打包大概是 90秒，目前我开发的项目有50+个包，预计一次打渠道包需要 80分钟<br>，采用美团方式, 2分钟</li>
-<li>不再需要开发参与打渠道包，以后开发只需要打连接测试环境的包和连接正式环境的包就行了</li>
-<li>打包方式利于qa进行测试验证</li>
-</ol>
-<h4 id="原理介绍:">原理介绍:</h4><p>META-INF目录<br>这个目录下面存放的是Apk包的签名，所有的文件都要通过这个签名的验证，当然有一种文件是可以越过这种验证，也就是在 META-INF目录下 一个空白没有内容只有名字的文件，那么我们只要把这个文件的名字改成我们的渠道码就可以了。<br>以后特殊设置我们照样是可以通过这个方法去累加。<br>Android中使用的代码</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">static</span> String <span class="title">getChannelFromApk</span><span class="params">(Context context, String channelKey)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//从apk包中获取</span></span><br><span class="line">        ApplicationInfo appinfo = context.getApplicationInfo();</span><br><span class="line">        String sourceDir = appinfo.sourceDir;</span><br><span class="line">        <span class="comment">//默认放在meta-inf/里， 所以需要再拼接一下</span></span><br><span class="line">        String key = <span class="string">"META-INF/"</span> + channelKey;</span><br><span class="line">        String ret = <span class="string">""</span>;</span><br><span class="line">        ZipFile zipfile = <span class="keyword">null</span>;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            zipfile = <span class="keyword">new</span> ZipFile(sourceDir);</span><br><span class="line">            Enumeration&lt;?&gt; entries = zipfile.entries();</span><br><span class="line">            <span class="keyword">while</span> (entries.hasMoreElements()) &#123;</span><br><span class="line">                ZipEntry entry = ((ZipEntry) entries.nextElement());</span><br><span class="line">                String entryName = entry.getName();</span><br><span class="line">                <span class="keyword">if</span> (entryName.startsWith(key)) &#123;</span><br><span class="line">                    ret = entryName;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">            <span class="keyword">if</span> (zipfile != <span class="keyword">null</span>) &#123;</span><br><span class="line">                <span class="keyword">try</span> &#123;</span><br><span class="line">                    zipfile.close();</span><br><span class="line">                &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">                    e.printStackTrace();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        String[] split = ret.split(<span class="string">"_"</span>);</span><br><span class="line">        String channel = <span class="string">""</span>;</span><br><span class="line">        <span class="keyword">if</span> (split != <span class="keyword">null</span> &amp;&amp; split.length &gt;= <span class="number">2</span>) &#123;</span><br><span class="line">            channel = ret.substring(split[<span class="number">0</span>].length() + <span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> channel;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>采用美团渠道打包形式</p>
-<h2 id="渠道包打包解决方案">渠道包打包解决方案</h2><h3 id="美团渠道包解决方案">美团渠道包解决方案</h3><blockquote>
-<p>用于解决大量除了渠道码以外别的内容一摸一样的渠道包打包问题<br>原地址: <a]]>
-    </summary>
-    
-      <category term="android" scheme="http://stonepyy.cn/tags/android/"/>
-    
-      <category term="code" scheme="http://stonepyy.cn/categories/code/"/>
-    
-      <category term="android" scheme="http://stonepyy.cn/categories/code/android/"/>
     
   </entry>
   
