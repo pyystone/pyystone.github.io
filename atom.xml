@@ -34,6 +34,39 @@
   </entry>
   
   <entry>
+    <title><![CDATA[IDEA编译java代码找不到Main函数]]></title>
+    <link href="http://stonepyy.cn/2017/02/22/Idea-build-error-main-not-found/"/>
+    <id>http://stonepyy.cn/2017/02/22/Idea-build-error-main-not-found/</id>
+    <published>2017-02-22T03:21:55.000Z</published>
+    <updated>2017-02-27T07:59:26.000Z</updated>
+    <content type="html"><![CDATA[<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Exception in thread <span class="string">"main"</span> java.lang.ClassNotFoundException: loadtb</span><br><span class="line">at java.net.URLClassLoader$<span class="number">1</span>.run(URLClassLoader.java:<span class="number">202</span>)</span><br><span class="line">at java.security.AccessController.doPrivileged(Native Method)</span><br><span class="line">at java.net.URLClassLoader.findClass(URLClassLoader.java:<span class="number">190</span>)</span><br><span class="line">at java.lang.ClassLoader.loadClass(ClassLoader.java:<span class="number">306</span>)</span><br><span class="line">at java.lang.ClassLoader.loadClass(ClassLoader.java:<span class="number">247</span>)</span><br><span class="line">at java.lang.Class.forName0(Native Method)</span><br><span class="line">at java.lang.Class.forName(Class.java:<span class="number">247</span>)</span><br><span class="line">at org.apache.hadoop.util.RunJar.main(RunJar.java:<span class="number">201</span>)</span><br></pre></td></tr></table></figure>
+<p>修正方案：</p>
+<ol>
+<li>确认Run的类 的 类文件 和 类名一致</li>
+<li><p>确认类里面存在 main 函数</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> Exception </span>&#123;&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>确认生成输出目录下面是否存在生成的class文件</p>
+</li>
+</ol>
+]]></content>
+    <summary type="html">
+    <![CDATA[<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class=]]>
+    </summary>
+    
+      <category term="Idea" scheme="http://stonepyy.cn/tags/Idea/"/>
+    
+      <category term="Java" scheme="http://stonepyy.cn/tags/Java/"/>
+    
+      <category term="error" scheme="http://stonepyy.cn/tags/error/"/>
+    
+      <category term="code" scheme="http://stonepyy.cn/categories/code/"/>
+    
+      <category term="java" scheme="http://stonepyy.cn/categories/code/java/"/>
+    
+  </entry>
+  
+  <entry>
     <title><![CDATA[阿里云域名交由dnspod 解析]]></title>
     <link href="http://stonepyy.cn/2016/07/31/changedns/"/>
     <id>http://stonepyy.cn/2016/07/31/changedns/</id>
@@ -591,45 +624,6 @@
       <category term="东方" scheme="http://stonepyy.cn/tags/%E4%B8%9C%E6%96%B9/"/>
     
       <category term="纯音乐" scheme="http://stonepyy.cn/tags/%E7%BA%AF%E9%9F%B3%E4%B9%90/"/>
-    
-      <category term="music" scheme="http://stonepyy.cn/categories/music/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Angel Beats 音乐集]]></title>
-    <link href="http://stonepyy.cn/2015/10/27/angelbeats-music/"/>
-    <id>http://stonepyy.cn/2015/10/27/angelbeats-music/</id>
-    <published>2015-10-26T17:31:21.000Z</published>
-    <updated>2015-10-27T16:30:55.000Z</updated>
-    <content type="html"><![CDATA[<h2 id="Angel_Beats_音乐集">Angel Beats 音乐集</h2><blockquote>
-<p>说到音乐，身为一个死宅必须先推自己的信仰，也就是我最喜欢的动漫《Angel Beats》, 对我来说AB给我带来的影响是巨大的，他支撑我走过了大学这2年，我没有在最初遇上他，但是很荣幸在我即将进入迷茫的时候遇到了他，theme of sss 这首歌给我带来的深思无疑是非常巨大的，每次我循环这首钢琴曲的时候，心里总有种淡淡的悸动，人生不正是如此？人从懂事开始，不就已经开发反抗这世界所有对他的不公了吗？</p>
-</blockquote>
-<h3 id="OP_&amp;_ED">OP &amp; ED</h3><blockquote>
-<p>AB的OP,ED无疑是成功的，少有的能够让我一直聆听的歌曲，每次OP的引入和结束ED的反思回忆，这就是人生</p>
-</blockquote>
-<ol>
-<li>My Soul,Your Beats!</li>
-<li>Brave Song</li>
-</ol>
-<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="450" src="http://music.163.com/outchain/player?type=1&id=2866486&auto=0&height=430"></iframe>
-
-
-<h3 id="AB的音乐集">AB的音乐集</h3><blockquote>
-<p>全部出自大魔王之手。</p>
-</blockquote>
-<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="450" src="http://music.163.com/outchain/player?type=1&id=45451&auto=0&height=430"></iframe>
-
-<h3 id="AB游戏钢琴曲">AB游戏钢琴曲</h3><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="450" src="http://music.163.com/outchain/player?type=1&id=3270403&auto=0&height=430"></iframe>
-]]></content>
-    <summary type="html">
-    <![CDATA[<h2 id="Angel_Beats_音乐集">Angel Beats 音乐集</h2><blockquote>
-<p>说到音乐，身为一个死宅必须先推自己的信仰，也就是我最喜欢的动漫《Angel Beats》, 对我来说AB给我带来的影响是巨大的，他支撑我走过了大学这2年，我没]]>
-    </summary>
-    
-      <category term="ACG" scheme="http://stonepyy.cn/tags/ACG/"/>
-    
-      <category term="音乐" scheme="http://stonepyy.cn/tags/%E9%9F%B3%E4%B9%90/"/>
     
       <category term="music" scheme="http://stonepyy.cn/categories/music/"/>
     
