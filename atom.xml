@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://stonepyy.cn/"/>
-  <updated>2017-02-27T07:51:13.000Z</updated>
+  <updated>2017-02-27T07:55:34.000Z</updated>
   <id>http://stonepyy.cn/</id>
   
   <author>
@@ -15,11 +15,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title><![CDATA[idea_register]]></title>
+    <title><![CDATA[JetBrains系列IDE注册]]></title>
     <link href="http://stonepyy.cn/2017/02/27/idea-register/"/>
     <id>http://stonepyy.cn/2017/02/27/idea-register/</id>
     <published>2017-02-27T07:49:54.000Z</published>
-    <updated>2017-02-27T07:51:13.000Z</updated>
+    <updated>2017-02-27T07:55:34.000Z</updated>
     <content type="html"><![CDATA[<p>我自己假设的服务器，不定期开放。<a href="http://home.stonepyy.cn:11017/" target="_blank" rel="external">http://home.stonepyy.cn:11017/</a> </p>
 ]]></content>
     <summary type="html">
