@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://stonepyy.cn/"/>
-  <updated>2016-07-31T10:50:35.000Z</updated>
+  <updated>2017-02-27T07:51:13.000Z</updated>
   <id>http://stonepyy.cn/</id>
   
   <author>
@@ -13,6 +13,25 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[idea_register]]></title>
+    <link href="http://stonepyy.cn/2017/02/27/idea-register/"/>
+    <id>http://stonepyy.cn/2017/02/27/idea-register/</id>
+    <published>2017-02-27T07:49:54.000Z</published>
+    <updated>2017-02-27T07:51:13.000Z</updated>
+    <content type="html"><![CDATA[<p>我自己假设的服务器，不定期开放。<a href="http://home.stonepyy.cn:11017/" target="_blank" rel="external">http://home.stonepyy.cn:11017/</a> </p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>我自己假设的服务器，不定期开放。<a href="http://home.stonepyy.cn:11017/" target="_blank" rel="external">http://home.stonepyy.cn:11017/</a> </p>
+]]>
+    </summary>
+    
+      <category term="JetBrains" scheme="http://stonepyy.cn/tags/JetBrains/"/>
+    
+      <category term="IDE" scheme="http://stonepyy.cn/categories/IDE/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[阿里云域名交由dnspod 解析]]></title>
@@ -613,30 +632,6 @@
       <category term="音乐" scheme="http://stonepyy.cn/tags/%E9%9F%B3%E4%B9%90/"/>
     
       <category term="music" scheme="http://stonepyy.cn/categories/music/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[我的烘焙清单]]></title>
-    <link href="http://stonepyy.cn/2015/10/26/MyCookTools/"/>
-    <id>http://stonepyy.cn/2015/10/26/MyCookTools/</id>
-    <published>2015-10-26T12:07:41.000Z</published>
-    <updated>2015-11-01T06:05:17.000Z</updated>
-    <content type="html"><![CDATA[<h3 id="烤箱">烤箱</h3><p>德尔玛 EO320（不限，功能讲，上下控温，30L+，做面包最好自带发酵功能）</p>
-<h3 id="工具">工具</h3><p>搅拌刮刀<br>打蛋盆（可以用比较深底的大容量碗替代，做蛋糕的时候鸡蛋打发体积会变得很大）<br>打蛋器 （单纯做蛋糕便宜一点的就可以了，如果想要做面包，需要和面的话，只能用厨师机 或者 面包机）<br>面粉筛<br>模具（推荐硅胶，PS:做戚风面包不适合用不沾模具）<br>锡纸（垫底和控制蛋糕？面包的火候）<br>硅胶垫（做烤鸡等烧烤类的东西，主要用户托盘的垫底材料，多次利用）<br>油纸 （单次利用，用于面包，海绵蛋糕）<br>托盘（一般烤箱有送，不过烤箱送的只能托盘只能烤面包或者已经有模具装好的蛋糕，要做 海绵蛋糕那种大的方形的蛋糕，就需要自己去买方形托盘了）</p>
-<h3 id="蛋糕_饼干_原料">蛋糕 饼干 原料</h3><p>黄油<br>低筋粉<br>泡打粉，吉士粉（不是必备）</p>
-<h3 id="面包原料">面包原料</h3><p>高筋粉<br>酵母<br>盐</p>
-<h3 id="通用">通用</h3><p>糖<br>奶粉<br>鸡蛋</p>
-<h3 id="经常去的网站和博客">经常去的网站和博客</h3><p><a href="http://i.youku.com/u/UMTkwMjQ1ODY4MA==" target="_blank" rel="external">优酷: 跟着君之学烘焙</a><br><a href="http://www.meishij.net/" target="_blank" rel="external">美食杰</a></p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<h3 id="烤箱">烤箱</h3><p>德尔玛 EO320（不限，功能讲，上下控温，30L+，做面包最好自带发酵功能）</p>
-<h3 id="工具">工具</h3><p>搅拌刮刀<br>打蛋盆（可以用比较深底的大容量碗替代，做蛋糕的时候鸡蛋打发体积会变得很大）<br>打蛋器]]>
-    </summary>
-    
-      <category term="烘焙" scheme="http://stonepyy.cn/tags/%E7%83%98%E7%84%99/"/>
-    
-      <category term="cookie" scheme="http://stonepyy.cn/categories/cookie/"/>
     
   </entry>
   
